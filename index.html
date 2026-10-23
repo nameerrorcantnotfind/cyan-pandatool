@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Cyan Panda Tool v3.3 — Quản lý Fan TikTok</title>
+<title>Cyan Panda Tool v3.4 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -131,9 +131,9 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.3 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.4 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
@@ -143,7 +143,7 @@
         <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.3 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.4 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
     <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">☀️ Sáng</button>
@@ -449,8 +449,7 @@
   <!-- ===== TAB 5: KẾT NỐI ===== -->
   <!-- ===== TAB 5: KẾT NỐI (MỚI — gọn theo yêu cầu) ===== -->
   <section id="tab-connect" class="tabpage">
-    <div class="grid2">
-      <div class="card">
+    <div class="card">
         <h2>📱 Kết nối bằng quét mã QR (chính)</h2>
         <p class="muted">Cách chính để kết nối TikTok: quét QR bằng điện thoại, xác nhận trên app TikTok, tool tự lấy token. Không cần dán code hay thao tác dài dòng.</p>
         <div class="row" style="margin-top:14px">
@@ -466,48 +465,8 @@
         <div class="row">
           <button class="btn small ghost" id="btnDisconnect" style="display:none" onclick="disconnectTikTok()">Ngắt kết nối &amp; xóa token</button>
         </div>
-        <div class="warnbox" style="margin-top:14px">
-          <b>Nếu báo lỗi non_sandbox_target:</b> Vào <b>developers.tiktok.com</b> → Sandbox → <b>Target users</b> → Add <b>@username chính</b> của bạn → Save → đợi 1 phút rồi quét lại.
-        </div>
-      </div>
-
-      <div>
-        <div class="card" style="margin-bottom:16px">
-          <h2>🗝️ Client Config — Add Client &amp; Check Client</h2>
-          <div style="margin-top:10px"><label>Client Key</label>
-            <input id="ttKey" value="sbaw7zo3lbxb8g9ih1" disabled>
-            <span class="badge green" style="margin-top:6px">OFFICIAL KEY · Đã gắn sẵn</span></div>
-          <div style="margin-top:12px"><label>Client Secret</label>
-            <div class="row"><input id="cc_secret" type="password" placeholder="69ri••••••••••••••••••••8EbNWlJ" style="flex:1">
-            <button class="btn small ghost" onclick="toggleSecret()">Hiện/Ẩn</button></div>
-            <p class="muted">Secret chỉ lưu trên máy này khi bạn Save — không nằm trong code, không đưa lên GitHub.</p></div>
-          <div style="margin-top:12px"><label>Redirect URI</label>
-            <input id="cc_redirect" value="https://nameerrorcantnotfind.github.io/cyan-pandatool/callback">
-            <p class="muted">⚠️ <b>Redirect URI rất quan trọng:</b> phải trùng khớp 100% với URI đã đăng ký trong app tại developers.tiktok.com. Nếu thiếu hoặc sai, TikTok báo lỗi <b>redirect_uri</b> và <b>không trả code đăng nhập</b> — đăng nhập sẽ thất bại dù Client Key/Secret đúng.</p></div>
-          <div style="margin-top:12px"><label>Supabase URL (đồng bộ supa_cfg)</label><input id="sb_url" placeholder="https://xxxx.supabase.co"></div>
-          <div style="margin-top:8px"><label>Supabase Anon Key</label><input id="sb_key" placeholder="eyJhbGciOi..."></div>
-          <div class="row" style="margin-top:12px">
-            <button class="btn" onclick="checkClient()">🔍 Check Client</button>
-            <button class="btn ghost" onclick="saveClient()">💾 Save</button>
-            <span id="sbState" class="muted">Chưa save client.</span>
-          </div>
-        </div>
-
-        <div class="card" style="margin-bottom:16px">
-          <h2>🔌 Kết Nối Tài Khoản — Supabase • SUP_001</h2>
-          <p class="muted">Trạng thái đồng bộ dữ liệu (fans / queue / logs / ký ức) lên Supabase. Cấu hình URL + Anon Key ở card Client Config phía trên rồi bấm kiểm tra.</p>
-          <div class="row" style="margin-top:10px">
-            <button class="btn ghost" onclick="checkSupa()">🔍 Kiểm tra kết nối Supabase</button>
-            <span id="supaState2" class="muted">Chưa kiểm tra.</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>🤖 AI Multi-Flow — 6 providers</h2>
-          <p class="muted">Đã chuyển vào <b>⚙️ Setting</b> (nút ở header, hiện sau khi đăng nhập TikTok) — bật/tắt provider, chọn nhóm user và <b>thêm API KEY</b> đều làm trong Setting. Mọi chức năng AI sẽ kiểm tra KEY tại đó.</p>
-        </div>
-      </div>
     </div>
+    <p class="muted" style="margin-top:10px">⚙️ Toàn bộ cấu hình (Client Config · Supabase · AI Multi-Flow) nằm trong nút <b>Setting</b> ở header — hiện sau khi đăng nhập. Tab Kết Nối chỉ dùng để đăng nhập TikTok.</p>
   </section>
 
 
@@ -1214,9 +1173,9 @@ function closeQr(){ $('qrModal').classList.remove('open'); }
 function qrSuccess(){
   const data = { access_token:'act.' + Math.random().toString(36).slice(2, 26), open_id:'oid_' + Math.random().toString(36).slice(2, 14), expires_in:604800, scope:'user.info.basic,user.info.stats,video.list', expires_at: Date.now() + 604800 * 1000 };
   store.set('panda_real_token_v262', data);
-  store.set('panda_real_account_v262', { username:'cyan.panda', followers: 12000 + Math.floor(Math.random() * 900) });
+  store.set('panda_real_account_v262', { username:'cyan.khotinh' });
   closeQr(); renderConnect();
-  I('success','TIK_LOGIN_SUCCESS','Đã duyệt @cyan.panda — Token đang hoạt động · đã lưu panda_real_token_v262 (expires_in 604800)','QR connect');
+  I('success','TIK_LOGIN_SUCCESS','Đã duyệt @cyan.khotinh — Token đang hoạt động · đã lưu panda_real_token_v262 (expires_in 604800)','QR connect');
   rt('QR connect thành công — Token đang hoạt động ✅');
 }
 function disconnectTikTok(){ store.del('panda_real_token_v262'); store.del('panda_real_account_v262'); renderConnect(); I('success','TIK_LOGIN_SUCCESS','Đã ngắt kết nối & xóa token','Ngắt kết nối'); }
@@ -1225,7 +1184,7 @@ function renderConnect(){
   const active = tok && (tok.expires_at || 0) > Date.now();
   $('lockBadge').style.display = active ? 'none' : 'inline-block';
   $('qrTokenState').innerHTML = active
-    ? '✅ Đã kết nối <b>@' + (acc ? acc.username : '') + '</b> — Token đang hoạt động · ' + (acc ? acc.followers.toLocaleString('vi-VN') + ' followers · ' : '') + 'còn ' + Math.max(1, Math.ceil(((tok.expires_at || 0) - Date.now()) / 86400000)) + ' ngày'
+    ? '✅ Đã kết nối <b>@' + (acc ? acc.username : '') + '</b> — Token đang hoạt động · ' + (acc && typeof acc.followers === 'number' ? acc.followers.toLocaleString('vi-VN') + ' followers · ' : '') + 'còn ' + Math.max(1, Math.ceil(((tok.expires_at || 0) - Date.now()) / 86400000)) + ' ngày'
     : '⛔ Chưa kết nối — Token chưa hoạt động.';
   $('btnDisconnect').style.display = tok ? 'inline-block' : 'none';
 
@@ -1242,7 +1201,7 @@ function saveClient(){
   const cfg = { client_key: $('ttKey').value.trim(), redirect_uri: $('cc_redirect').value.trim(), supabase_url: url, supabase_anon: anon, secret_set: !!$('cc_secret').value };
   store.set('cp_client_cfg', cfg);
   if (url && anon) store.set('supa_cfg', { url, key: anon });
-  sbInsert('accounts', { type:'client_config', username:'cyan.panda', meta:{ client_key:'sbaw7zo3lbxb8g9ih1', redirect_uri: cfg.redirect_uri } });
+  sbInsert('accounts', { type:'client_config', username:'cyan.khotinh', meta:{ client_key:'sbaw7zo3lbxb8g9ih1', redirect_uri: cfg.redirect_uri } });
   $('sbState').textContent = '✅ Đã save client vào supa_cfg' + (url && anon ? ' + bật đồng bộ Supabase.' : ' (chưa có Supabase — chạy local).');
   I('success','LIC_001','Đã save client — supa_cfg + accounts(client_config) đã cập nhật','Save Client');
 }
@@ -1268,7 +1227,7 @@ $('qrModal').addEventListener('click', e => { if (e.target === $('qrModal')) clo
   $('rtLog').innerHTML = '';
   rt('Panda khởi động xong — queue & ký ức đã nạp từ panda_ai_db_v261 💾');
   const code = new URLSearchParams(location.search).get('code');
-  if (code){ const data = { access_token:'act.' + Math.random().toString(36).slice(2, 26), open_id:'oid_' + Math.random().toString(36).slice(2, 14), expires_in:604800, scope:'user.info.basic,user.info.stats,video.list', expires_at: Date.now() + 604800 * 1000 }; store.set('panda_real_token_v262', data); store.set('panda_real_account_v262', { username:'cyan.panda', followers: 12000 + Math.floor(Math.random() * 900) }); renderConnect(); goTab('connect'); I('success','TIK_LOGIN_SUCCESS','Đã nhận code từ URL callback — Token đang hoạt động, đã lưu panda_real_token_v262','Callback'); }
+  if (code){ const data = { access_token:'act.' + Math.random().toString(36).slice(2, 26), open_id:'oid_' + Math.random().toString(36).slice(2, 14), expires_in:604800, scope:'user.info.basic,user.info.stats,video.list', expires_at: Date.now() + 604800 * 1000 }; store.set('panda_real_token_v262', data); store.set('panda_real_account_v262', { username:'cyan.khotinh' }); renderConnect(); goTab('connect'); I('success','TIK_LOGIN_SUCCESS','Đã nhận code từ URL callback — Token đang hoạt động, đã lưu panda_real_token_v262','Callback'); }
   I('success','SYS_001','Khởi động Cyan Panda v3.1 — Build ' + bt,'Khởi động');
   /* Realtime mô phỏng: fan nhắn đến, fan lạ tự thêm nếu bật auto-add */
   setInterval(() => {
@@ -1776,7 +1735,7 @@ function applyGate(){
   const acc = store.get('panda_real_account_v262', null);
   document.querySelectorAll('.tabbtn').forEach(b => { const ok = b.dataset.tab === 'connect'; b.style.opacity = (!logged && !ok) ? '.45' : ''; b.title = (!logged && !ok) ? '🔒 Đăng nhập TikTok để mở khóa mục này' : ''; });
   const chip = $('gateChip');
-  if (chip){ chip.style.display = 'inline-block'; chip.textContent = logged ? '🔓 Đã đăng nhập @' + (acc ? acc.username : 'cyan.panda') : '🔒 Chưa đăng nhập — tool đang khóa'; }
+  if (chip){ chip.style.display = 'inline-block'; chip.textContent = logged ? '🔓 Đã đăng nhập @' + (acc ? acc.username : 'cyan.khotinh') : '🔒 Chưa đăng nhập — tool đang khóa'; }
   const lo = $('btnLogout'); if (lo) lo.style.display = logged ? 'inline-block' : 'none';
   const lb = $('lockBanner'); if (lb) lb.style.display = logged ? 'none' : 'flex';
   if (!logged){ const act = document.querySelector('.tabpage.active'); if (act && act.id !== 'tab-connect') goTab('connect'); }
@@ -1812,7 +1771,7 @@ function gateLogout(){ disconnectTikTok(); applyGate(); goTab('connect'); }
 <div class="modal" id="settingsModal">
   <div class="box" style="max-width:760px">
     <div class="row" style="justify-content:space-between"><h2>⚙️ Setting</h2><button class="btn small ghost" onclick="closeSettings()">✖ Đóng</button></div>
-    <p class="muted">Setting chỉ mở sau khi đăng nhập TikTok. Mọi chức năng AI đều kiểm tra <b>API KEY</b> tại đây — chưa thêm KEY, AI sẽ báo cần thêm KEY trong Setting.</p>
+    <p class="muted">Setting chỉ mở sau khi đăng nhập TikTok — chứa <b>toàn bộ cấu hình</b> của tool: theme, AI Multi-Flow (API KEY), Client Config (TikTok) và Supabase. Mọi chức năng AI đều kiểm tra <b>API KEY</b> tại đây.</p>
     <h3>🎨 Giao diện — Sáng / Tối</h3>
     <div class="row">
       <button class="btn ghost" onclick="setTheme('light')">☀️ Sáng</button>
@@ -1823,6 +1782,35 @@ function gateLogout(){ disconnectTikTok(); applyGate(); goTab('connect'); }
     <p class="muted">6 AI chạy song song, <b>mỗi AI quản lý một nhóm user riêng</b> cho mượt. Bật/tắt, chọn nhóm, chọn loại AI và thêm <b>API KEY</b> đều tại đây. Provider của một nhóm chưa có KEY thì AI dùng provider <b>"Tất cả (dự phòng)"</b> nếu provider đó có KEY.</p>
     <div id="providerList" style="margin-top:6px"></div>
     <div class="row" style="margin-top:12px"><button class="btn" onclick="saveProviders()">💾 Lưu cấu hình AI</button><span class="muted" id="pvState"></span></div>
+    <div style="border-top:1px dashed var(--line);margin-top:18px;padding-top:8px">
+      <h3>🗝️ Client Config — Add Client &amp; Check Client</h2>
+      <div style="margin-top:10px"><label>Client Key</label>
+        <input id="ttKey" value="sbaw7zo3lbxb8g9ih1" disabled>
+        <span class="badge green" style="margin-top:6px">OFFICIAL KEY · Đã gắn sẵn</span></div>
+      <div style="margin-top:12px"><label>Client Secret</label>
+        <div class="row"><input id="cc_secret" type="password" placeholder="69ri••••••••••••••••••••8EbNWlJ" style="flex:1">
+        <button class="btn small ghost" onclick="toggleSecret()">Hiện/Ẩn</button></div>
+        <p class="muted">Secret chỉ lưu trên máy này khi bạn Save — không nằm trong code, không đưa lên GitHub.</p></div>
+      <div style="margin-top:12px"><label>Redirect URI</label>
+        <input id="cc_redirect" value="https://nameerrorcantnotfind.github.io/cyan-pandatool/callback">
+        <p class="muted">⚠️ <b>Redirect URI rất quan trọng:</b> phải trùng khớp 100% với URI đã đăng ký trong app tại developers.tiktok.com. Nếu thiếu hoặc sai, TikTok báo lỗi <b>redirect_uri</b> và <b>không trả code đăng nhập</b> — đăng nhập sẽ thất bại dù Client Key/Secret đúng.</p></div>
+      <div style="margin-top:12px"><label>Supabase URL (đồng bộ supa_cfg)</label><input id="sb_url" placeholder="https://xxxx.supabase.co"></div>
+      <div style="margin-top:8px"><label>Supabase Anon Key</label><input id="sb_key" placeholder="eyJhbGciOi..."></div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn" onclick="checkClient()">🔍 Check Client</button>
+        <button class="btn ghost" onclick="saveClient()">💾 Save</button>
+        <span id="sbState" class="muted">Chưa save client.</span>
+      </div>
+    </div>
+    
+    <div style="border-top:1px dashed var(--line);margin-top:18px;padding-top:8px">
+      <h3>🔌 Kết Nối Tài Khoản — Supabase • SUP_001</h2>
+      <p class="muted">Trạng thái đồng bộ dữ liệu (fans / queue / logs / ký ức) lên Supabase. Cấu hình URL + Anon Key ở mục Client Config phía trên (trong Setting này) rồi bấm kiểm tra.</p>
+      <div class="row" style="margin-top:10px">
+        <button class="btn ghost" onclick="checkSupa()">🔍 Kiểm tra kết nối Supabase</button>
+        <span id="supaState2" class="muted">Chưa kiểm tra.</span>
+      </div>
+    </div>
   </div>
 </div>
 <script>
