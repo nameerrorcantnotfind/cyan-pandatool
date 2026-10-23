@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Cyan Panda Tool v3.6 — Quản lý Fan TikTok</title>
+<title>Cyan Panda Tool v3.7 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -131,9 +131,9 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.6 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.7 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — DỌN SẠCH MÔ PHỎNG theo lệnh CYAN: xóa tin nhắn đến giả, fan mới giả (pool), hội thoại mẫu REAL_USERS, ký ức mẫu, "học AI" % giả, heatmap/word cloud/cảm xúc mẫu, gửi tin tự đánh dấu Đã gửi/Thất bại ngẫu nhiên, Check Client bịa "ok:true", Check Supabase chỉ-so-cấu-hình. Thay bằng THẬT: đồng bộ tin nhắn thật từ bảng messages trên Supabase → Chờ duyệt; gợi ý trả lời sinh bằng API AI thật (OpenAI/Gemini/Claude/DeepSeek theo KEY trong Setting); duyệt tin → vào hàng đợi nháp + ghi rõ TikTok không có API DM nên chưa gửi tới fan; quét fan mới tính trên bảng fan thật; Check Supabase ping REST thật. Dọn 1 lần dữ liệu thời mô phỏng trong máy.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.5</b><div class="muted">24/10/2026 — ĐĂNG NHẬP TIKTOK THẬT: bỏ hẳn token giả — nút "Tôi đã quét &amp; xác nhận" không còn tự đăng nhập; code từ TikTok được gửi qua tiktok-proxy (Supabase) đổi token thật, gọi API lấy profile thật; toàn bộ data TikTok trả về được ghi log; đăng nhập thành công hiện popup chào mừng (Avatar + Name + @username + followers thật).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.7</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — ĐỒNG BỘ FAN 2 CHIỀU với Supabase: đăng nhập xong tool tự tải bảng fans từ server xuống (server là nguồn chuẩn cho tên/xưng hô/thân mật/danh mục/VIP), sửa hoặc thêm fan là đẩy lên server ngay (upsert theo username); fan chỉ có ở máy được đẩy lên bổ sung. Tài liệu & cấu hình (đặc biệt API KEY) vẫn giữ ở máy — không đưa lên server.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6.1</b><div class="muted">24/10/2026 — Vá trung thực FE↔BE: cron keepalive trên server không còn đánh dấu hàng đợi là "sent" (đổi thành "processed" + ghi rõ chưa gửi DM); FE hiển thị "Server đã xử lý (chưa gửi DM)"; daily-learn chỉ đếm tin thật, bỏ câu "AI hiểu %" trong log server.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6</b><div class="muted">24/10/2026 — DỌN SẠCH MÔ PHỎNG theo lệnh CYAN: xóa tin nhắn đến giả, fan mới giả (pool), hội thoại mẫu REAL_USERS, ký ức mẫu, "học AI" % giả, heatmap/word cloud/cảm xúc mẫu, gửi tin tự đánh dấu Đã gửi/Thất bại ngẫu nhiên, Check Client bịa "ok:true", Check Supabase chỉ-so-cấu-hình. Thay bằng THẬT: đồng bộ tin nhắn thật từ bảng messages trên Supabase → Chờ duyệt; gợi ý trả lời sinh bằng API AI thật (OpenAI/Gemini/Claude/DeepSeek theo KEY trong Setting); duyệt tin → vào hàng đợi nháp + ghi rõ TikTok không có API DM nên chưa gửi tới fan; quét fan mới tính trên bảng fan thật; Check Supabase ping REST thật. Dọn 1 lần dữ liệu thời mô phỏng trong máy.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.5</b><div class="muted">24/10/2026 — ĐĂNG NHẬP TIKTOK THẬT: bỏ hẳn token giả — nút "Tôi đã quét &amp; xác nhận" không còn tự đăng nhập; code từ TikTok được gửi qua tiktok-proxy (Supabase) đổi token thật, gọi API lấy profile thật; toàn bộ data TikTok trả về được ghi log; đăng nhập thành công hiện popup chào mừng (Avatar + Name + @username + followers thật).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
@@ -143,7 +143,7 @@
         <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.6 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.7 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
     <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">☀️ Sáng</button>
@@ -485,7 +485,7 @@
   </section>
 
   <footer class="muted" style="text-align:center;margin-top:26px;line-height:1.9">
-    Cyan Panda Tool v3.6 · Build <span id="buildTime2">—</span><br>
+    Cyan Panda Tool v3.7 · Build <span id="buildTime2">—</span><br>
     <a href="#" onclick="return false" style="color:#2E7D32">Privacy</a> · <a href="#" onclick="return false" style="color:#2E7D32">Terms</a> · © 2026 Cyan Panda<br>
     Verified bUQOGRMp7lPCfbDy3jV0mn5iTOaNM7Wy<br>
     OFFICIAL DOMAIN https://nameerrorcantnotfind.github.io/cyan-pandatool/
@@ -907,7 +907,7 @@ function renderQueue(){
   if (!q.length){ $('queueList').textContent = 'Chưa có tin nào trong queue.'; return; }
   $('queueList').innerHTML = q.slice(-12).reverse().map(j =>
     '<div style="padding:5px 0;border-bottom:1px dashed #E8F5E9">→ @' + j.username + ' · ' +
-    (j.status === 'sent' ? '<span class="badge green">Đã gửi</span>' : j.status === 'failed' ? '<span class="badge red">Thất bại</span>' : j.status === 'processing' ? '<span class="badge gray">Đang gửi…</span>' : '<span class="badge gray">pending</span>') +
+    (j.status === 'pending' ? '<span class="badge gray">Đang chờ</span>' : '<span class="badge blue">Server đã xử lý (chưa gửi DM)</span>') +
     ' <span class="muted">' + j.content.slice(0, 42) + '…</span></div>').join('');
 }
 function renderSendStatus(){
@@ -1868,6 +1868,79 @@ async function syncInboxFromSupabase(){
   if (db){ db.memories = []; db.stories = []; store.set('panda_ai_db_v261', db); }
   store.set('cp_pending', []); store.set('cp_queue', []); store.set('cp_send_status', []); store.set('cp_seen_msg', []);
   I('success','SYS_001','Cyan Panda v3.6 — đã dọn dữ liệu thời mô phỏng (ký ức mẫu, stories mẫu, hàng chờ & queue giả). Dữ liệu thật (fan, tài liệu, cấu hình) được giữ nguyên.','Khởi động v3.6');
+})();
+</script>
+<script>
+/* ================= v3.7: DONG BO FAN 2 CHIEU voi Supabase (bang fans) ================= */
+function fanToRow(f){
+  return { username: f.username, display_name: f.name || f.username, call_as: f.call || 'em', intimacy: f.intimacy ?? 5, time_slot: f.time || 'Tối', ai_style: f.style || 'Dịu dàng', notes: f.note || '', country: f.country || 'VN', category: f.cat || 'Chưa phân loại', vip: !!f.vip, priority: f.priority || 'vừa' };
+}
+function rowToFan(r, local){
+  const f = local || { username: r.username, lastDays: 99, msgs: 0 };
+  f.name = r.display_name || f.name || r.username;
+  f.call = r.call_as || f.call || 'em';
+  if (typeof r.intimacy === 'number') f.intimacy = r.intimacy;
+  f.time = r.time_slot || f.time || 'Tối';
+  f.style = r.ai_style || f.style || 'Dịu dàng';
+  f.note = r.notes ?? f.note ?? '';
+  f.country = r.country || f.country || 'VN';
+  f.cat = r.category || f.cat || 'Chưa phân loại';
+  f.vip = !!r.vip;
+  f.priority = r.priority || f.priority || 'vừa';
+  return f;
+}
+async function sbUpsertFan(f){
+  const base = (typeof supaBase === 'function') ? supaBase() : null;
+  const cfg = base || sbCfg();
+  if (!cfg || !cfg.url || !cfg.key || !f || !f.username) return false;
+  try{
+    const r = await fetch(cfg.url.replace(/\/$/,'') + '/rest/v1/fans?on_conflict=username', { method:'POST', headers:{ apikey: cfg.key, Authorization: 'Bearer ' + cfg.key, 'Content-Type':'application/json', Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify(fanToRow(f)) });
+    return r.ok;
+  }catch(e){ return false; }
+}
+let __fanSyncing = false;
+async function syncFansDown(){
+  if (__fanSyncing) return;
+  if (typeof isLogged === 'function' && !isLogged()) return;
+  const base = (typeof supaBase === 'function') ? supaBase() : null;
+  if (!base) return;
+  __fanSyncing = true;
+  try{
+    const rows = await sbGet('fans', 'select=*&order=username.asc&limit=500');
+    if (!rows) return;
+    const db = getDB();
+    let merged = 0, created = 0;
+    for (const r of rows){
+      const local = db.fans.find(f => f.username === r.username);
+      if (local){ rowToFan(r, local); merged++; }
+      else { db.fans.push(rowToFan(r, null)); created++; }
+    }
+    if (merged || created){
+      saveDB(db); renderFans(); if (typeof renderInbox === 'function') renderInbox(); if (typeof renderBulkCount === 'function') renderBulkCount();
+      I('success','SUP_001','Đồng bộ fan 2 chiều: tải ' + rows.length + ' fan từ Supabase (' + created + ' mới, ' + merged + ' cập nhật)','Đồng bộ fan');
+    }
+    /* Day len cac fan chi co o local */
+    let pushed = 0;
+    for (const f of getFans()){ if (!rows.some(r => r.username === f.username)){ if (await sbUpsertFan(f)) pushed++; } }
+    if (pushed) I('success','SUP_001','Đồng bộ fan 2 chiều: đã đẩy ' + pushed + ' fan từ máy lên Supabase','Đồng bộ fan');
+  } finally { __fanSyncing = false; }
+}
+/* Hook: sua fan / them fan -> day len server ngay */
+(function v37Hooks(){
+  if (typeof saveFanModal === 'function'){
+    const _sfm = saveFanModal;
+    saveFanModal = function(){ const idx = +($('fm_idx')?.value ?? -1); _sfm(); const f = getFans()[idx]; if (f) sbUpsertFan(f); };
+  }
+  if (typeof addNewFan === 'function'){
+    const _anf = addNewFan;
+    addNewFan = function(u, silent){ _anf(u, silent); const f = getFans().find(x => x.username === u); if (f) sbUpsertFan(f); };
+  }
+  if (typeof exchangeCode === 'function'){
+    const _ex = exchangeCode;
+    exchangeCode = async function(code){ const ok = await _ex(code); if (ok) syncFansDown(); return ok; };
+  }
+  if (typeof isLogged === 'function' && isLogged()) setTimeout(syncFansDown, 1200);
+  I('success','SYS_001','Cyan Panda v3.7 — đồng bộ fan 2 chiều với Supabase (tải xuống khi đăng nhập, đẩy lên khi sửa/thêm fan)','Khởi động v3.7');
 })();
 </script>
 </body>
