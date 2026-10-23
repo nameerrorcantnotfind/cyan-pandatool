@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Cyan Panda Tool v3.7 — Quản lý Fan TikTok</title>
+<title>Cyan Panda Tool v3.8 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -131,9 +131,9 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.7 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.8 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.7</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — ĐỒNG BỘ FAN 2 CHIỀU với Supabase: đăng nhập xong tool tự tải bảng fans từ server xuống (server là nguồn chuẩn cho tên/xưng hô/thân mật/danh mục/VIP), sửa hoặc thêm fan là đẩy lên server ngay (upsert theo username); fan chỉ có ở máy được đẩy lên bổ sung. Tài liệu & cấu hình (đặc biệt API KEY) vẫn giữ ở máy — không đưa lên server.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6.1</b><div class="muted">24/10/2026 — Vá trung thực FE↔BE: cron keepalive trên server không còn đánh dấu hàng đợi là "sent" (đổi thành "processed" + ghi rõ chưa gửi DM); FE hiển thị "Server đã xử lý (chưa gửi DM)"; daily-learn chỉ đếm tin thật, bỏ câu "AI hiểu %" trong log server.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6</b><div class="muted">24/10/2026 — DỌN SẠCH MÔ PHỎNG theo lệnh CYAN: xóa tin nhắn đến giả, fan mới giả (pool), hội thoại mẫu REAL_USERS, ký ức mẫu, "học AI" % giả, heatmap/word cloud/cảm xúc mẫu, gửi tin tự đánh dấu Đã gửi/Thất bại ngẫu nhiên, Check Client bịa "ok:true", Check Supabase chỉ-so-cấu-hình. Thay bằng THẬT: đồng bộ tin nhắn thật từ bảng messages trên Supabase → Chờ duyệt; gợi ý trả lời sinh bằng API AI thật (OpenAI/Gemini/Claude/DeepSeek theo KEY trong Setting); duyệt tin → vào hàng đợi nháp + ghi rõ TikTok không có API DM nên chưa gửi tới fan; quét fan mới tính trên bảng fan thật; Check Supabase ping REST thật. Dọn 1 lần dữ liệu thời mô phỏng trong máy.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.5</b><div class="muted">24/10/2026 — ĐĂNG NHẬP TIKTOK THẬT: bỏ hẳn token giả — nút "Tôi đã quét &amp; xác nhận" không còn tự đăng nhập; code từ TikTok được gửi qua tiktok-proxy (Supabase) đổi token thật, gọi API lấy profile thật; toàn bộ data TikTok trả về được ghi log; đăng nhập thành công hiện popup chào mừng (Avatar + Name + @username + followers thật).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.8</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — BE-FIRST + FIX PROFILE TIKTOK: (1) Supabase làm nguồn chính cho TÀI LIỆU (bảng documents), MẪU TIN (templates), KÝ ỨC/CÂU CHUYỆN/TÌNH HUỐNG (ai_context) và TRẠNG THÁI tool (app_state) — mở tool là tải từ BE xuống, thêm/sửa là ghi lên BE; đổi thiết bị vẫn dùng lại nguyên ngữ cảnh, AI không thành "người lạ". Local chỉ còn là bản đệm. (2) tiktok-proxy v3: ping trả 200 OK (hết missing_code đỏ), lấy profile TÁCH theo 3 nhóm scope basic/profile/stats, hỗ trợ refresh token. (3) Bỏ fallback cứng username — TikTok không trả thì để trống + báo rõ thiếu scope user.info.profile; link đăng nhập xin đủ 4 scope; có nút "🔄 Làm mới profile TikTok" + tự refresh khi mở tool.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.7</b><div class="muted">24/10/2026 — ĐỒNG BỘ FAN 2 CHIỀU với Supabase: đăng nhập xong tool tự tải bảng fans từ server xuống (server là nguồn chuẩn cho tên/xưng hô/thân mật/danh mục/VIP), sửa hoặc thêm fan là đẩy lên server ngay (upsert theo username); fan chỉ có ở máy được đẩy lên bổ sung. Tài liệu & cấu hình (đặc biệt API KEY) vẫn giữ ở máy — không đưa lên server.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6.1</b><div class="muted">24/10/2026 — Vá trung thực FE↔BE: cron keepalive trên server không còn đánh dấu hàng đợi là "sent" (đổi thành "processed" + ghi rõ chưa gửi DM); FE hiển thị "Server đã xử lý (chưa gửi DM)"; daily-learn chỉ đếm tin thật, bỏ câu "AI hiểu %" trong log server.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6</b><div class="muted">24/10/2026 — DỌN SẠCH MÔ PHỎNG theo lệnh CYAN: xóa tin nhắn đến giả, fan mới giả (pool), hội thoại mẫu REAL_USERS, ký ức mẫu, "học AI" % giả, heatmap/word cloud/cảm xúc mẫu, gửi tin tự đánh dấu Đã gửi/Thất bại ngẫu nhiên, Check Client bịa "ok:true", Check Supabase chỉ-so-cấu-hình. Thay bằng THẬT: đồng bộ tin nhắn thật từ bảng messages trên Supabase → Chờ duyệt; gợi ý trả lời sinh bằng API AI thật (OpenAI/Gemini/Claude/DeepSeek theo KEY trong Setting); duyệt tin → vào hàng đợi nháp + ghi rõ TikTok không có API DM nên chưa gửi tới fan; quét fan mới tính trên bảng fan thật; Check Supabase ping REST thật. Dọn 1 lần dữ liệu thời mô phỏng trong máy.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.5</b><div class="muted">24/10/2026 — ĐĂNG NHẬP TIKTOK THẬT: bỏ hẳn token giả — nút "Tôi đã quét &amp; xác nhận" không còn tự đăng nhập; code từ TikTok được gửi qua tiktok-proxy (Supabase) đổi token thật, gọi API lấy profile thật; toàn bộ data TikTok trả về được ghi log; đăng nhập thành công hiện popup chào mừng (Avatar + Name + @username + followers thật).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
@@ -143,7 +143,7 @@
         <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.7 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.8 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
     <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">☀️ Sáng</button>
@@ -459,6 +459,7 @@
         <p style="margin-top:12px"><span id="qrTokenState">⛔ Chưa kết nối — Token chưa hoạt động.</span></p>
         <div class="row">
           <button class="btn small ghost" id="btnDisconnect" style="display:none" onclick="disconnectTikTok()">Ngắt kết nối &amp; xóa token</button>
+          <button class="btn small ghost" id="btnRefreshTk" style="display:none" onclick="refreshTikTokProfile()">🔄 Làm mới profile TikTok</button>
         </div>
     </div>
     <p class="muted" style="margin-top:10px">⚙️ Toàn bộ cấu hình (Client Config · Supabase · AI Multi-Flow) nằm trong nút <b>Setting</b> ở header — hiện sau khi đăng nhập. Tab Kết Nối chỉ dùng để đăng nhập TikTok.</p>
@@ -485,7 +486,7 @@
   </section>
 
   <footer class="muted" style="text-align:center;margin-top:26px;line-height:1.9">
-    Cyan Panda Tool v3.7 · Build <span id="buildTime2">—</span><br>
+    Cyan Panda Tool v3.8 · Build <span id="buildTime2">—</span><br>
     <a href="#" onclick="return false" style="color:#2E7D32">Privacy</a> · <a href="#" onclick="return false" style="color:#2E7D32">Terms</a> · © 2026 Cyan Panda<br>
     Verified bUQOGRMp7lPCfbDy3jV0mn5iTOaNM7Wy<br>
     OFFICIAL DOMAIN https://nameerrorcantnotfind.github.io/cyan-pandatool/
@@ -1053,7 +1054,7 @@ function delDoc(i){ const docs = getDocs(); const d = docs.splice(i, 1)[0]; stor
 
 /* ---------- Kết nối: QR + Client Config + Đăng nhập đơn giản ---------- */
 function authUrl(){
-  return 'https://www.tiktok.com/v2/auth/authorize?client_key=sbaw7zo3lbxb8g9ih1&scope=user.info.basic,user.info.stats,video.list&response_type=code&redirect_uri=' + encodeURIComponent($('cc_redirect')?.value || 'https://nameerrorcantnotfind.github.io/cyan-pandatool/callback') + '&state=cyan_panda_qr';
+  return 'https://www.tiktok.com/v2/auth/authorize?client_key=sbaw7zo3lbxb8g9ih1&scope=user.info.basic,user.info.profile,user.info.stats,video.list&response_type=code&redirect_uri=' + encodeURIComponent($('cc_redirect')?.value || 'https://nameerrorcantnotfind.github.io/cyan-pandatool/callback') + '&state=cyan_panda_qr';
 }
 const QR_EMBED_SRC = document.querySelector('#qrImg') ? document.querySelector('#qrImg').src : '';
 function openQr(){
@@ -1075,9 +1076,10 @@ function renderConnect(){
   const active = tok && (tok.expires_at || 0) > Date.now();
   $('lockBadge').style.display = active ? 'none' : 'inline-block';
   $('qrTokenState').innerHTML = active
-    ? '✅ Đã kết nối <b>@' + (acc ? acc.username : '') + '</b> — Token đang hoạt động · ' + (acc && typeof acc.followers === 'number' ? acc.followers.toLocaleString('vi-VN') + ' followers · ' : '') + 'còn ' + Math.max(1, Math.ceil(((tok.expires_at || 0) - Date.now()) / 86400000)) + ' ngày'
+    ? '✅ Đã kết nối <b>@' + (acc && acc.username ? acc.username : '(TikTok chưa trả username)') + '</b> — Token đang hoạt động · ' + (acc && acc.updated_at ? 'profile cập nhật ' + new Date(acc.updated_at).toLocaleTimeString('vi-VN') + ' · ' : '') + (acc && typeof acc.followers === 'number' ? acc.followers.toLocaleString('vi-VN') + ' followers · ' : '') + 'còn ' + Math.max(1, Math.ceil(((tok.expires_at || 0) - Date.now()) / 86400000)) + ' ngày'
     : '⛔ Chưa kết nối — Token chưa hoạt động.';
   $('btnDisconnect').style.display = tok ? 'inline-block' : 'none';
+  const __rb = $('btnRefreshTk'); if (__rb) __rb.style.display = tok ? 'inline-block' : 'none';
 
 }
 function toggleSecret(){ const s = $('cc_secret'); s.type = s.type === 'password' ? 'text' : 'password'; }
@@ -1091,9 +1093,9 @@ async function checkClient(){
   const base = (url && anon) ? { url, key: anon } : (typeof supaBase === 'function' ? supaBase() : null);
   if (base){
     try{
-      const r = await fetch(base.url.replace(/\/$/,'') + '/functions/v1/tiktok-proxy', { method:'POST', headers:{ 'Content-Type':'application/json', apikey: base.key, Authorization: 'Bearer ' + base.key }, body: '{}' });
+      const r = await fetch(base.url.replace(/\/$/,'') + '/functions/v1/tiktok-proxy', { method:'POST', headers:{ 'Content-Type':'application/json', apikey: base.key, Authorization: 'Bearer ' + base.key }, body: JSON.stringify({ ping:true }) });
       const d = await r.json();
-      if (d && d.error === 'missing_code'){ msg += '✔️ tiktok-proxy PHẢN HỒI THẬT — Supabase + function đang sống. '; I('success','SUP_001','Check Client THẬT: tiktok-proxy trả missing_code (function đã deploy, đang hoạt động)','Check Client'); }
+      if (d && (d.ok || d.error === 'missing_code')){ msg += '✔️ tiktok-proxy PHẢN HỒI THẬT — Supabase + function đang sống. '; I('success','SUP_001','Check Client THẬT: tiktok-proxy phản hồi ping OK (function đang hoạt động)','Check Client'); }
       else { msg += '⚠️ Proxy phản hồi: ' + JSON.stringify(d).slice(0, 140) + ' '; I('error','SUP_001','Check Client: proxy phản hồi lạ — ' + JSON.stringify(d).slice(0, 140),'Check Client'); }
     }catch(e){ msg += '❌ Không gọi được tiktok-proxy (' + e.message + '). '; I('error','ERR_001','Check Client: không gọi được tiktok-proxy — ' + e.message,'Check Client'); }
   } else msg += '(Chưa có Supabase URL + Anon Key nên chưa kiểm tra được kết nối proxy.) ';
@@ -1710,8 +1712,10 @@ async function exchangeCode(code){
     const tok = { access_token: data.access_token, refresh_token: data.refresh_token || '', open_id: data.open_id || '', scope: data.scope || '', expires_in: data.expires_in || 86400, expires_at: Date.now() + (data.expires_in || 86400) * 1000, real: true };
     store.set('panda_real_token_v262', tok);
     const u = data.user || {};
-    const acc = { username: u.username || 'cyan.khotinh', display_name: u.display_name || '', avatar_url: u.avatar_large_url || u.avatar_url || '', followers: (typeof u.follower_count === 'number' ? u.follower_count : undefined), following: u.following_count, likes: u.likes_count, videos: u.video_count, bio: u.bio_description || '', open_id: u.open_id || data.open_id || '' };
+    const acc = { username: u.username || '', display_name: u.display_name || '', avatar_url: u.avatar_large_url || u.avatar_url || '', avatar_url_100: u.avatar_url_100 || '', followers: (typeof u.follower_count === 'number' ? u.follower_count : undefined), following: u.following_count, likes: u.likes_count, videos: u.video_count, bio: u.bio_description || '', profile_deep_link: u.profile_deep_link || '', is_verified: !!u.is_verified, open_id: u.open_id || data.open_id || '', updated_at: Date.now() };
     store.set('panda_real_account_v262', acc);
+    if (data.user_errors && Object.keys(data.user_errors).length) I('error','TIK_002','TikTok từ chối một số nhóm dữ liệu profile: ' + JSON.stringify(data.user_errors).slice(0, 300),'TikTok API');
+    if (!acc.username) I('error','TIK_002','TikTok KHÔNG trả username — token thiếu scope user.info.profile. Không tự điền username nữa.','TikTok API');
     sbInsert('accounts', { type:'tiktok_real', username: acc.username, meta: { open_id: acc.open_id, followers: (typeof acc.followers === 'number' ? acc.followers : null) } });
     renderConnect(); applyGate();
     if (typeof rt === 'function') rt('Đăng nhập TikTok THẬT thành công — @' + acc.username + ' ✅');
@@ -1941,6 +1945,143 @@ async function syncFansDown(){
   }
   if (typeof isLogged === 'function' && isLogged()) setTimeout(syncFansDown, 1200);
   I('success','SYS_001','Cyan Panda v3.7 — đồng bộ fan 2 chiều với Supabase (tải xuống khi đăng nhập, đẩy lên khi sửa/thêm fan)','Khởi động v3.7');
+})();
+</script>
+<script>
+/* ================= v3.8: BE-FIRST (Supabase la nguon chinh) + TikTok profile refresh ================= */
+function beBase(){ return (typeof supaBase === 'function') ? supaBase() : null; }
+async function sbDelete(table, query){
+  const base = beBase(); if (!base) return false;
+  try{ const r = await fetch(base.url.replace(/\/$/,'') + '/rest/v1/' + table + '?' + query, { method:'DELETE', headers:{ apikey: base.key, Authorization: 'Bearer ' + base.key, Prefer: 'return=minimal' } }); return r.ok; }catch(e){ return false; }
+}
+async function sbPost(table, row){
+  const base = beBase(); if (!base) return false;
+  try{ const r = await fetch(base.url.replace(/\/$/,'') + '/rest/v1/' + table, { method:'POST', headers:{ apikey: base.key, Authorization: 'Bearer ' + base.key, 'Content-Type':'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(row) }); return r.ok; }catch(e){ return false; }
+}
+async function sbUpsertState(key, value){
+  const base = beBase(); if (!base) return false;
+  try{ const r = await fetch(base.url.replace(/\/$/,'') + '/rest/v1/app_state?on_conflict=key', { method:'POST', headers:{ apikey: base.key, Authorization: 'Bearer ' + base.key, 'Content-Type':'application/json', Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ key, value, updated_at: new Date().toISOString() }) }); return r.ok; }catch(e){ return false; }
+}
+const BE_STATE_KEYS = ['cp_theme','cp_poll','cp_rtmode','cp_live','cp_autoadd','cp_packs','cp_learn_sel'];
+let __be38Busy = false, __be38Internal = false;
+
+/* --- Tai lieu (documents) --- */
+async function syncDocsFromBE(){
+  const rows = await sbGet('documents', 'select=*&order=id.asc&limit=200');
+  if (!rows || !rows.length) return;
+  store.set('panda_docs_db_v261', rows.map(r => { const d = { id: r.id, title: r.title || '', content: r.content || '' }; if (r.type) d.type = r.type; if (r.created_at) d.when = fmtDT(new Date(r.created_at)); return d; }));
+  renderDocs(); if (typeof renderHeat === 'function') renderHeat();
+}
+/* --- Mau tin (templates) --- */
+async function syncTemplatesFromBE(){
+  const rows = await sbGet('templates', 'select=*&order=id.asc&limit=200');
+  if (!rows || !rows.length) return;
+  store.set('cp_templates', rows.map(r => ({ name: r.name || '', text: r.text || '' })));
+  if (typeof renderTemplates === 'function') renderTemplates();
+}
+async function syncTemplatesUp(){
+  const rows = await sbGet('templates', 'select=name&limit=200'); if (!rows) return;
+  const have = new Set(rows.map(r => r.name));
+  for (const t of getTemplates()){ if (!have.has(t.name)) await sbPost('templates', { name: t.name, text: t.text }); }
+}
+/* --- Ky uc / cau chuyen / tinh huong (ai_context) --- */
+function ctxKey(kind, e){ return kind + '|' + JSON.stringify(e); }
+async function syncContextFromBE(){
+  const rows = await sbGet('ai_context', 'select=*&order=id.asc&limit=500');
+  if (!rows || !rows.length) return false;
+  const byKind = { memory: [], story: [], situation: [] };
+  rows.forEach(r => { if (byKind[r.kind]) byKind[r.kind].push(r.meta && Object.keys(r.meta).length ? r.meta : { content: r.content }); });
+  const db = getDB(); let touched = false;
+  if (byKind.memory.length){ db.memories = byKind.memory; touched = true; }
+  if (byKind.story.length){ db.stories = byKind.story; touched = true; }
+  if (byKind.situation.length){ db.situations = byKind.situation; touched = true; }
+  if (touched){ __be38Internal = true; saveDB(db); __be38Internal = false; if (typeof renderMemory === 'function') renderMemory(); if (typeof renderStories === 'function') renderStories(); }
+  return touched;
+}
+async function syncContextUp(){
+  const rows = await sbGet('ai_context', 'select=kind,content,meta&limit=500');
+  if (!rows) return;
+  const known = new Set(rows.map(r => ctxKey(r.kind, r.meta && Object.keys(r.meta).length ? r.meta : { content: r.content })));
+  const db = getDB();
+  const lists = { memory: db.memories || [], story: db.stories || [], situation: db.situations || [] };
+  for (const kind of Object.keys(lists)){
+    for (const e of lists[kind]){
+      if (!known.has(ctxKey(kind, e))){
+        const content = kind === 'memory' ? (e.content || '') : kind === 'story' ? (e.story || '') : (e.s || '');
+        if (await sbPost('ai_context', { kind, content, meta: e })) known.add(ctxKey(kind, e));
+      }
+    }
+  }
+}
+/* --- Trang thai ung dung (app_state) --- */
+async function syncStateFromBE(){
+  const rows = await sbGet('app_state', 'select=key,value&limit=100');
+  if (!rows) return;
+  rows.forEach(r => { if (BE_STATE_KEYS.includes(r.key)) store.set(r.key, r.value); });
+}
+let __stateCache = '';
+async function syncStateUp(){
+  const snap = {};
+  BE_STATE_KEYS.forEach(k => { const v = store.get(k, null); if (v !== null && v !== undefined) snap[k] = v; });
+  const s = JSON.stringify(snap);
+  if (s === __stateCache) return;
+  __stateCache = s;
+  for (const k of Object.keys(snap)) await sbUpsertState(k, snap[k]);
+}
+/* --- Refresh profile TikTok qua proxy v3 --- */
+async function refreshTikTokProfile(silent){
+  const base = beBase(); if (!base) return false;
+  const tok = store.get('panda_real_token_v262', null);
+  if (!tok || !tok.real){ if (!silent) I('error','TIK_002','Chưa có token TikTok thật — hãy đăng nhập trước.','Refresh TikTok'); return false; }
+  const expired = (tok.expires_at || 0) <= Date.now();
+  const payload = expired && tok.refresh_token ? { refresh_token: tok.refresh_token } : { access_token: tok.access_token };
+  try{
+    const r = await fetch(base.url.replace(/\/$/,'') + '/functions/v1/tiktok-proxy', { method:'POST', headers:{ 'Content-Type':'application/json', apikey: base.key, Authorization: 'Bearer ' + base.key }, body: JSON.stringify(payload) });
+    const data = await r.json();
+    if (data.access_token){ tok.access_token = data.access_token; if (data.refresh_token) tok.refresh_token = data.refresh_token; tok.open_id = data.open_id || tok.open_id; tok.scope = data.scope || tok.scope; tok.expires_in = data.expires_in || 86400; tok.expires_at = Date.now() + tok.expires_in * 1000; store.set('panda_real_token_v262', tok); }
+    const u = data.user || {};
+    if (!Object.keys(u).length){ I('error','TIK_002','Refresh: TikTok không trả profile' + (data.user_errors ? ' — ' + JSON.stringify(data.user_errors).slice(0, 250) : ''),'Refresh TikTok'); return false; }
+    const acc = { username: u.username || '', display_name: u.display_name || '', avatar_url: u.avatar_large_url || u.avatar_url || '', avatar_url_100: u.avatar_url_100 || '', followers: (typeof u.follower_count === 'number' ? u.follower_count : undefined), following: u.following_count, likes: u.likes_count, videos: u.video_count, bio: u.bio_description || '', profile_deep_link: u.profile_deep_link || '', is_verified: !!u.is_verified, open_id: u.open_id || tok.open_id || '', updated_at: Date.now() };
+    store.set('panda_real_account_v262', acc);
+    if (data.user_errors && Object.keys(data.user_errors).length) I('error','TIK_002','Refresh: một số nhóm dữ liệu bị TikTok từ chối: ' + JSON.stringify(data.user_errors).slice(0, 250),'Refresh TikTok');
+    if (!acc.username) I('error','TIK_002','Refresh: TikTok vẫn chưa trả username — kiểm tra scope user.info.profile trong app/Sandbox.','Refresh TikTok');
+    I('success','TIK_002','Đã refresh profile TikTok thật: @' + (acc.username || '(chưa có username)') + (typeof acc.followers === 'number' ? ' · ' + acc.followers.toLocaleString('vi-VN') + ' followers' : ''),'Refresh TikTok');
+    renderConnect(); if (typeof applyGate === 'function') applyGate();
+    return true;
+  }catch(e){ I('error','ERR_001','Refresh TikTok lỗi: ' + e.message,'Refresh TikTok'); return false; }
+}
+/* --- Chuoi dong bo BE-first + hooks --- */
+async function beFirstSync(){
+  if (__be38Busy) return; __be38Busy = true;
+  try{
+    await syncStateFromBE();
+    await syncDocsFromBE();
+    await syncTemplatesFromBE();
+    await syncContextFromBE();
+    await syncContextUp();
+    await syncTemplatesUp();
+    if (!store.get('cp_v38_migrated', null)){
+      const drows = await sbGet('documents', 'select=id&limit=1');
+      if (drows && !drows.length){ for (const d of getDocs()) await sbPost('documents', { title: d.title, content: d.content, type: d.type || null }); await syncDocsFromBE(); }
+      store.set('cp_v38_migrated', 1);
+      I('success','SUP_001','v3.8 BE-first: ngữ cảnh AI (tài liệu/ký ức/mẫu tin/trạng thái) đã lấy Supabase làm nguồn chính — đổi thiết bị vẫn dùng lại được, AI không thành người lạ.','BE-first');
+    }
+    await syncStateUp();
+  } finally { __be38Busy = false; }
+}
+(function v38Hooks(){
+  if (typeof addDoc === 'function'){ const _ad = addDoc; addDoc = function(){ const before = getDocs().length; _ad(); const docs = getDocs(); if (docs.length > before){ const d = docs[docs.length - 1]; sbPost('documents', { title: d.title, content: d.content, type: d.type || null }).then(() => syncDocsFromBE()); } }; }
+  if (typeof delDoc === 'function'){ const _dd = delDoc; delDoc = function(i){ const d = getDocs()[i]; _dd(i); if (d && d.id) sbDelete('documents', 'id=eq.' + d.id); else if (d) sbDelete('documents', 'title=eq.' + encodeURIComponent(d.title)); }; }
+  if (typeof addTemplate === 'function'){ const _at = addTemplate; addTemplate = function(){ const before = getTemplates().length; _at(); const t = getTemplates(); if (t.length > before) sbPost('templates', { name: t[t.length - 1].name, text: t[t.length - 1].text }); }; }
+  if (typeof insertHealthTemplate === 'function'){ const _iht = insertHealthTemplate; insertHealthTemplate = function(){ const before = getTemplates().length; _iht(); const t = getTemplates(); if (t.length > before) sbPost('templates', { name: t[t.length - 1].name, text: t[t.length - 1].text }); }; }
+  if (typeof saveDB === 'function'){ const _sdb = saveDB; let __ctxUpAt = 0; saveDB = function(db){ _sdb(db); if (!__be38Internal && typeof isLogged === 'function' && isLogged()){ const now = Date.now(); if (now - __ctxUpAt > 5000){ __ctxUpAt = now; syncContextUp(); } } }; }
+  if (typeof wipeDB === 'function'){ const _wd = wipeDB; wipeDB = function(){ _wd(); sbDelete('ai_context', 'kind=in.(memory,story)'); }; }
+  if (typeof exchangeCode === 'function'){ const _ex2 = exchangeCode; exchangeCode = async function(code){ const ok = await _ex2(code); if (ok) beFirstSync(); return ok; }; }
+  if (typeof isLogged === 'function' && isLogged()){
+    setTimeout(() => { beFirstSync(); refreshTikTokProfile(true); }, 1500);
+    setInterval(() => { syncStateUp(); }, 45000);
+  }
+  I('success','SYS_001','Cyan Panda v3.8 — BE-first (Supabase là nguồn chính cho tài liệu/ký ức/mẫu tin/trạng thái) + refresh profile TikTok thật qua proxy v3','Khởi động v3.8');
 })();
 </script>
 </body>
