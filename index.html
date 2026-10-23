@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cyan Panda Tool v3.1 — Quản lý Fan TikTok</title>
+<title>Cyan Panda Tool v3.2 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -84,7 +84,34 @@
   .story{border:1px solid #E8F5E9;border-radius:16px;padding:13px 15px;margin-bottom:10px;background:#fff}
   .tmpl{border:1px solid #E8F5E9;border-radius:14px;padding:11px 13px;margin-bottom:8px;background:#fff;font-size:13.5px}
   .tmpl.sel{border-color:#2E7D32;background:#F1F8E9}
+  :root{--bg:#F9FDF9;--card:#fff;--ink:#1B2A1C;--line:#C8E6C9;--soft:#E8F5E9;--field:#fff;--mut:#5f7160;--head:#1B5E20}
+  html[data-theme="dark"]{--bg:#101613;--card:#1B241E;--ink:#E6F2E7;--line:#2E4A34;--soft:#223528;--field:#141B16;--mut:#9DB8A2;--head:#A5D6A7}
+  body{background:var(--bg);color:var(--ink)}
+  .card{background:var(--card);border-color:var(--line);color:var(--ink)}
+  input,select,textarea{background:var(--field);color:var(--ink);border-color:var(--line)}
+  input:disabled{background:var(--soft)}
+  .tabbtn{background:var(--card);border-color:var(--line)}
+  .btn.ghost{background:var(--soft);border-color:var(--line);color:var(--ink)}
+  .tmpl,.whoitem,.inboxitem,.story{background:var(--card);border-color:var(--line)}
+  .inboxitem:hover,.inboxitem.sel,.whoitem.sel,.tmpl.sel{background:var(--soft)}
+  .modal .box{background:var(--card);color:var(--ink)}
+  .toast{background:var(--card);color:var(--ink);border-color:var(--line)}
+  th{color:var(--head);border-color:var(--line)}
+  td{border-color:var(--line)}
+  h2,h3{color:var(--head)}
+  label{color:var(--head)}
+  .muted{color:var(--mut)}
+  .chip{background:var(--card);border-color:var(--line)}
+  .heat div{background:var(--soft);color:var(--mut)}
+  .progress{background:var(--soft)}
+  html[data-theme="dark"] .warnbox{background:#3A1D1D;color:#FFCDD2}
+  html[data-theme="dark"] .okbox{background:#1E3323;color:#C8E6C9}
+  html[data-theme="dark"] #lockBanner{background:#33201F !important}
+  html[data-theme="dark"] .badge.gray{background:#2A2F2B;color:#BDBDBD;border-color:#444}
+  html[data-theme="dark"] .badge.green{background:#1E3323;color:#A5D6A7}
+  html[data-theme="dark"] .slider-ui{background:#3A5741}
 </style>
+<script>try{document.documentElement.dataset.theme=JSON.parse(localStorage.getItem('cp_theme')||'"light"');}catch(e){document.documentElement.dataset.theme='light';}</script>
 </head>
 <body>
 <div id="toasts"></div>
@@ -102,9 +129,9 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.1 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.2 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
@@ -114,9 +141,11 @@
         <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.1 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.2 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
+    <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">🌙 Tối</button>
+    <button class="btn" id="btnSettings" style="display:none" onclick="openSettings()">⚙️ Setting</button>
     <button class="btn ghost" onclick="openDeploy()">📦 Hướng dẫn Deploy 1 lần</button>
   </header>
 
@@ -473,9 +502,7 @@
 
         <div class="card">
           <h2>🤖 AI Multi-Flow — 6 providers</h2>
-          <p class="muted">6 AI chạy song song, <b>mỗi AI quản lý một nhóm user riêng</b> cho mượt — tin của nhóm nào thì AI phụ trách nhóm đó sinh gợi ý &amp; rep.</p>
-          <div id="providerList" style="margin-top:10px"></div>
-          <div class="row" style="margin-top:10px"><button class="btn ghost" onclick="saveProviders()">💾 Lưu cấu hình providers</button></div>
+          <p class="muted">Đã chuyển vào <b>⚙️ Setting</b> (nút ở header, hiện sau khi đăng nhập TikTok) — bật/tắt provider, chọn nhóm user và <b>thêm API KEY</b> đều làm trong Setting. Mọi chức năng AI sẽ kiểm tra KEY tại đó.</p>
         </div>
       </div>
     </div>
@@ -1778,6 +1805,99 @@ function gateLogout(){ disconnectTikTok(); applyGate(); goTab('connect'); }
   try{ renderFans(); renderWho(); renderPending(); renderStories(); renderMemory(); }catch(e){}
   applyGate();
   I('success','SYS_001','Cyan Panda v3.1 — cổng đăng nhập ' + (isLogged() ? 'đang MỞ (đã đăng nhập TikTok)' : 'đang KHÓA (chưa đăng nhập TikTok — dữ liệu & tính năng bị ẩn)'),'Khởi động v3.1');
+})();
+</script>
+<div class="modal" id="settingsModal">
+  <div class="box" style="max-width:760px">
+    <div class="row" style="justify-content:space-between"><h2>⚙️ Setting</h2><button class="btn small ghost" onclick="closeSettings()">✖ Đóng</button></div>
+    <p class="muted">Setting chỉ mở sau khi đăng nhập TikTok. Mọi chức năng AI đều kiểm tra <b>API KEY</b> tại đây — chưa thêm KEY, AI sẽ báo cần thêm KEY trong Setting.</p>
+    <h3>🎨 Giao diện — Sáng / Tối</h3>
+    <div class="row">
+      <button class="btn ghost" onclick="setTheme('light')">☀️ Sáng</button>
+      <button class="btn ghost" onclick="setTheme('dark')">🌙 Tối</button>
+      <span class="muted" id="themeState"></span>
+    </div>
+    <h3>🤖 AI Multi-Flow — 6 providers</h3>
+    <p class="muted">6 AI chạy song song, <b>mỗi AI quản lý một nhóm user riêng</b> cho mượt. Bật/tắt, chọn nhóm, chọn loại AI và thêm <b>API KEY</b> đều tại đây. Provider của một nhóm chưa có KEY thì AI dùng provider <b>"Tất cả (dự phòng)"</b> nếu provider đó có KEY.</p>
+    <div id="providerList" style="margin-top:6px"></div>
+    <div class="row" style="margin-top:12px"><button class="btn" onclick="saveProviders()">💾 Lưu cấu hình AI</button><span class="muted" id="pvState"></span></div>
+  </div>
+</div>
+<script>
+/* ================= v3.2: SETTING + AI API KEY GATE + THEME SANG/TOI ================= */
+/* ----- Theme ----- */
+function setTheme(t){
+  document.documentElement.dataset.theme = t;
+  store.set('cp_theme', t);
+  const b = $('btnTheme'); if (b) b.textContent = t === 'dark' ? '☀️ Sáng' : '🌙 Tối';
+  const ts = $('themeState'); if (ts) ts.textContent = 'Đang dùng theme ' + (t === 'dark' ? 'Tối 🌙' : 'Sáng ☀️');
+}
+function toggleTheme(){ setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'); }
+/* ----- Settings modal (chi mo sau dang nhap) ----- */
+function openSettings(){ if (!needLogin()) return; renderProviders(); setTheme(store.get('cp_theme', 'light')); $('settingsModal').classList.add('open'); }
+function closeSettings(){ $('settingsModal').classList.remove('open'); }
+$('settingsModal').addEventListener('click', e => { if (e.target === $('settingsModal')) closeSettings(); });
+/* ----- AI Multi-Flow v2: them API KEY + loai AI (luu trong Setting) ----- */
+const AI_TYPES = ['Panda-AI (nội bộ)','OpenAI','Google Gemini','Anthropic Claude','DeepSeek','Khác'];
+function getProviders(){
+  const saved = store.get('cp_providers', null);
+  if (saved && saved.length) return saved.map((pv, i) => ({ name: pv.name || ('Panda-AI ' + (i + 1)), seg: pv.seg || PROVIDER_SEGS[i], on: pv.on !== false, key: pv.key || '', type: pv.type || AI_TYPES[0] }));
+  return PROVIDER_SEGS.map((s, i) => ({ name: 'Panda-AI ' + (i + 1), seg: s, on: true, key: '', type: AI_TYPES[0] }));
+}
+function renderProviders(){
+  const list = getProviders();
+  $('providerList').innerHTML = list.map((pv, i) =>
+    '<div style="padding:10px 0;border-bottom:1px dashed var(--line)">' +
+    '<div class="row" style="justify-content:space-between"><span>🤖 <b>' + pv.name + '</b> <span class="muted">· nhóm ' + pv.seg + '</span></span>' +
+    '<label class="switch"><input type="checkbox" id="pv_on_' + i + '" ' + (pv.on ? 'checked' : '') + '><span class="slider-ui"></span></label></div>' +
+    '<div class="row" style="margin-top:8px"><span style="flex:1;min-width:150px"><label>Nhóm user quản lý</label><select id="pv_seg_' + i + '">' + PROVIDER_SEGS.map(sg => '<option ' + (sg === pv.seg ? 'selected' : '') + '>' + sg + '</option>').join('') + '</select></span>' +
+    '<span style="flex:1;min-width:150px"><label>Loại AI</label><select id="pv_type_' + i + '">' + AI_TYPES.map(t => '<option ' + (t === pv.type ? 'selected' : '') + '>' + t + '</option>').join('') + '</select></span></div>' +
+    '<div style="margin-top:8px"><label>API KEY ' + (pv.key ? '· ✅ đã có KEY' : '· ⚠️ chưa thêm — AI của nhóm này chưa chạy được') + '</label><input type="password" id="pv_key_' + i + '" value="' + (pv.key || '') + '" placeholder="Dán API KEY của provider vào đây" autocomplete="off"></div></div>').join('');
+}
+function saveProviders(){
+  const list = PROVIDER_SEGS.map((sg, i) => ({ name: 'Panda-AI ' + (i + 1), seg: $('pv_seg_' + i).value, on: $('pv_on_' + i).checked, type: $('pv_type_' + i).value, key: $('pv_key_' + i).value.trim() }));
+  store.set('cp_providers', list);
+  const withKey = list.filter(x => x.on && x.key).length;
+  const pv = $('pvState'); if (pv) pv.textContent = withKey ? '✅ Đã lưu — ' + withKey + '/6 provider đang bật & có KEY.' : '⚠️ Đã lưu nhưng CHƯA provider nào có KEY — AI vẫn bị khóa.';
+  I(withKey ? 'success' : 'error','AI_003','Đã lưu AI Multi-Flow trong Setting: ' + list.filter(x => x.on).length + '/6 đang bật · ' + withKey + ' provider có KEY' + (withKey ? '' : ' — chưa có KEY nào, AI chưa dùng được'),'Setting');
+  renderProviders();
+}
+/* ----- AI gate v3.2: khoa theo AI API KEY trong Setting ----- */
+function segOfFan(fan){ if (!fan) return 'Tất cả (dự phòng)'; if (fan.vip) return 'VIP'; if (fan.priority === 'cao') return 'Ưu tiên'; if (fan.cat === 'Fan mới') return 'Fan mới'; if (fan.cat === 'Fan nhí') return 'Fan nhí'; return 'Fan thường'; }
+function providerFor(fan){
+  const list = getProviders(); const seg = segOfFan(fan);
+  const direct = list.find(x => x.seg === seg && x.on && (x.key || '').trim());
+  if (direct) return direct;
+  return list.find(x => x.seg === 'Tất cả (dự phòng)' && x.on && (x.key || '').trim()) || null;
+}
+aiReady = function(silent, fan){
+  if (!isLogged()){ if (!silent) I('error','ERR_001','🔒 AI đang khóa — cần đăng nhập TikTok trước (tab Kết Nối → quét QR)','AI Gate'); return false; }
+  if (!getProviders().some(x => x.on && (x.key || '').trim())){ if (!silent) I('error','AI_003','⚠️ Cần thêm AI API KEY trong Setting — bấm nút ⚙️ Setting ở header, nhập KEY cho ít nhất 1 provider rồi bấm Lưu','AI Gate'); return false; }
+  if (fan && !providerFor(fan)){ if (!silent) I('error','AI_003','⚠️ Nhóm "' + segOfFan(fan) + '" chưa có provider có KEY — thêm KEY cho provider của nhóm này (hoặc provider "Tất cả (dự phòng)") trong ⚙️ Setting','AI Gate'); return false; }
+  return true;
+};
+/* ----- Boc them: approve theo nhom fan + Setting chi hien sau dang nhap + tu hoc moi ngay qua AI gate ----- */
+(function v32Wrap(){
+  const _ap = approvePending;
+  approvePending = function(id){
+    const it = getPending().find(x => x.id === id);
+    const fan = it ? (getFans().find(f => f.username === it.username) || { username: it.username }) : null;
+    if (!aiReady(false, fan)) return;
+    return _ap.apply(this, arguments);
+  };
+  const _ag = applyGate;
+  applyGate = function(){ _ag(); const st = $('btnSettings'); if (st) st.style.display = isLogged() ? 'inline-block' : 'none'; };
+  if (typeof toggleDailyLearn === 'function'){
+    const _td = toggleDailyLearn;
+    toggleDailyLearn = function(){ if (!aiReady()){ const c = $('dailyLearn'); if (c) c.checked = false; return; } return _td.apply(this, arguments); };
+  }
+})();
+/* ----- Khoi dong v3.2 ----- */
+(function v32Init(){
+  setTheme(store.get('cp_theme', document.documentElement.dataset.theme || 'light'));
+  try{ renderProviders(); }catch(e){}
+  applyGate();
+  I('success','SYS_001','Cyan Panda v3.2 — ⚙️ Setting (AI Multi-Flow + API KEY) & theme Sáng/Tối sẵn sàng','Khởi động v3.2');
 })();
 </script>
 </body>
