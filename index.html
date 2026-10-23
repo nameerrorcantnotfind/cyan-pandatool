@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Cyan Panda Tool v3.4 — Quản lý Fan TikTok</title>
+<title>Cyan Panda Tool v3.6 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -131,9 +131,9 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.4 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.6 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.6</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — DỌN SẠCH MÔ PHỎNG theo lệnh CYAN: xóa tin nhắn đến giả, fan mới giả (pool), hội thoại mẫu REAL_USERS, ký ức mẫu, "học AI" % giả, heatmap/word cloud/cảm xúc mẫu, gửi tin tự đánh dấu Đã gửi/Thất bại ngẫu nhiên, Check Client bịa "ok:true", Check Supabase chỉ-so-cấu-hình. Thay bằng THẬT: đồng bộ tin nhắn thật từ bảng messages trên Supabase → Chờ duyệt; gợi ý trả lời sinh bằng API AI thật (OpenAI/Gemini/Claude/DeepSeek theo KEY trong Setting); duyệt tin → vào hàng đợi nháp + ghi rõ TikTok không có API DM nên chưa gửi tới fan; quét fan mới tính trên bảng fan thật; Check Supabase ping REST thật. Dọn 1 lần dữ liệu thời mô phỏng trong máy.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.5</b><div class="muted">24/10/2026 — ĐĂNG NHẬP TIKTOK THẬT: bỏ hẳn token giả — nút "Tôi đã quét &amp; xác nhận" không còn tự đăng nhập; code từ TikTok được gửi qua tiktok-proxy (Supabase) đổi token thật, gọi API lấy profile thật; toàn bộ data TikTok trả về được ghi log; đăng nhập thành công hiện popup chào mừng (Avatar + Name + @username + followers thật).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.4</b><div class="muted">24/10/2026 — Chuyển toàn bộ cấu hình (Client Config + Supabase) vào nút ⚙️ Setting; tab Kết Nối giờ chỉ còn đăng nhập QR · bỏ hộp cảnh báo non_sandbox_target · bỏ dữ liệu tài khoản test (@cyan.panda + số followers ảo) — trạng thái kết nối hiện đúng tài khoản thật @cyan.khotinh, không còn số liệu bịa.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
@@ -143,7 +143,7 @@
         <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.4 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.6 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
     <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">☀️ Sáng</button>
@@ -271,7 +271,7 @@
       <div id="approveBanner" style="display:none;background:#212121;color:#fff;border-radius:14px;padding:12px 14px;margin-top:10px;font-size:13.5px"></div>
       <div id="pendingList" style="margin-top:12px"></div>
       <div class="row" style="margin-top:8px">
-        <button class="btn small ghost" onclick="simulateIncoming()">📩 Mô phỏng tin nhắn đến</button>
+        <button class="btn small" onclick="pollScan()">🔄 Đồng bộ tin thật từ Supabase</button>
         <span class="muted">Khi nối API thật, tin nhắn đến sẽ tự chảy vào đây.</span>
       </div>
     </div>
@@ -332,47 +332,42 @@
   <!-- ===== TAB 4: ĐÀO TẠO AI ===== -->
   <section id="tab-ai" class="tabpage">
     <div class="card" style="margin-bottom:16px">
-      <h2>🤖 AUTO AI — Học lịch sử 30 ngày</h2>
-      <p class="muted">Tự động lấy lịch sử 30 ngày → phân tích → lưu DB <b>panda_ai_db_v261</b>. Memory lưu tăng dần (MEM_001 — cộng dồn, không ghi đè). Edge <b>panda-daily-learn</b> (cron 0 2 * * *) học thêm mỗi ngày khi bật toggle.</p>
+      <h2>🤖 Đào tạo AI — dữ liệu & ngữ cảnh thật</h2>
+      <p class="muted">Đã bỏ cơ chế "học" mô phỏng (số % hiểu bịa). AI gợi ý trả lời giờ được sinh bởi <b>API AI thật</b> (provider + KEY trong ⚙️ Setting), dùng ngữ cảnh thật: tài liệu bạn thêm, mẫu Style đang chọn và thông tin fan. Số liệu bên dưới là <b>số liệu thật trong DB của bạn</b>.</p>
       <div class="row" style="margin-top:14px">
-        <button class="btn" id="btnTrain" onclick="trainAI()">⬇️ Tải lịch sử 30 ngày thật</button>
-        <button class="btn ghost" onclick="relearnAI()">🔁 Học lại</button>
-        <button class="btn ghost" onclick="simulateDaily()">🌤️ Mô phỏng học thêm hôm nay (+2%)</button>
-        <button class="btn danger" onclick="wipeDB()">🗑️ Xóa DB</button>
-        <span id="trainState" class="muted">Chưa tải lịch sử.</span>
+        <button class="btn danger" onclick="wipeDB()">🗑️ Xóa DB ký ức</button>
+        <span id="trainState" class="muted">—</span>
       </div>
-      <div class="progress" style="margin-top:12px"><div id="trainBar"></div></div>
       <div class="grid2" style="margin-top:16px">
         <div class="card" style="box-shadow:none">
-          <div class="muted">AI ĐÃ HIỂU CYAN</div>
-          <div style="font-size:34px;font-weight:800;color:#2E7D32"><span id="aiPercent">0</span>%</div>
-          <div class="muted">Số tin đã học: <b id="aiCount">0</b> · Mốc học: <span id="aiMilestones">20 → 50 → 100 tin</span><br>Cập nhật: <span id="aiUpdated">—</span> · Queue đang chờ: <b id="aiQueueCount">0</b> (QUEUE_001)</div>
+          <div class="muted">SỐ FAN TRONG DB</div>
+          <div style="font-size:34px;font-weight:800;color:#2E7D32"><span id="aiPercent">0</span></div>
+          <div class="muted">Số ký ức đã lưu: <b id="aiCount">0</b><br>Cập nhật: <span id="aiUpdated">—</span> · Queue đang chờ: <b id="aiQueueCount">0</b> (QUEUE_001)</div>
         </div>
         <div class="card" style="box-shadow:none">
-          <label>Độ chủ động của AI (tự rep khi độ tin cậy cao)</label>
+          <label>Độ chủ động của AI (tuỳ chọn lưu trữ)</label>
           <input type="range" id="aiActive" min="0" max="100" value="60" oninput="saveAiSlider()">
-          <div class="muted"><span id="aiActiveVal">60</span>% — AI tự rep tin đơn giản, tin khó để “Chờ duyệt”.</div>
+          <div class="muted"><span id="aiActiveVal">60</span>% — chỉ là tuỳ chọn được lưu lại; tool KHÔNG tự gửi tin, mọi tin đều qua “Chờ duyệt”.</div>
           <div class="row" style="margin-top:14px">
             <label class="switch"><input type="checkbox" id="dailyLearn" onchange="toggleDailyLearn()"><span class="slider-ui"></span></label>
-            <div><b>Tự động học thêm mỗi ngày</b><div class="muted">SUP_001 · cron panda-daily-learn 2h sáng.</div></div>
+            <div><b>Nhật ký hằng ngày trên Supabase</b><div class="muted">SUP_001 · cron panda-daily-learn 2h sáng — đếm tin nhắn thật trong DB và ghi log.</div></div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="card" style="margin-bottom:16px">
-      <h2>🎯 Chọn fan để học — theo tin nhắn gần nhất &amp; danh mục</h2>
-      <p class="muted">Danh sách fan sắp xếp theo <b>tin nhắn mới nhất lên đầu</b>. Tick chọn fan — AI tự phân tích lịch sử trò chuyện của đúng những người đó (xưng hô, style, thân mật, ghi chú) để học sâu hơn. <b>Học lại</b> = xem lại những gì đã hiểu + học thêm <b>7 ngày gần nhất</b> (vd đã học 30 ngày → học lại thành 37 ngày).</p>
+      <h2>🎯 Danh sách fan — theo tin nhắn gần nhất &amp; danh mục</h2>
+      <p class="muted">Danh sách fan sắp xếp theo <b>tin nhắn mới nhất lên đầu</b> — dữ liệu thật trong bảng fan. Khi sinh gợi ý, AI thật dùng đúng thông tin của fan liên quan (xưng hô, style, thân mật, ghi chú) làm ngữ cảnh.</p>
       <div class="row" style="margin-top:10px">
         <span>Lọc danh mục <select id="learnCat" style="width:auto" onchange="renderLearnList()"><option value="all">Tất cả</option><option>VIP</option><option>Ưu tiên</option><option>Fan thường</option><option>Fan mới</option><option>Fan nhí</option><option>Chưa phân loại</option></select></span>
         <button class="btn small ghost" onclick="learnSelectRecent()">Chọn 5 fan nhắn gần nhất</button>
         <button class="btn small ghost" onclick="learnClearSel()">Bỏ chọn</button>
-        <span class="muted">Tổng khoảng thời gian AI đã bao quát: <b id="aiWindow">30 ngày</b></span>
+        <span class="muted">Khoảng học ngữ cảnh: <b id="aiWindow">30 ngày</b></span>
       </div>
       <div id="learnList" style="max-height:230px;overflow-y:auto;margin-top:10px"></div>
       <div class="row" style="margin-top:12px">
-        <button class="btn" onclick="learnSelected()">🎓 Học lịch sử của fan đã chọn</button>
-        <span class="muted">Mức thân mật của fan được chọn sẽ được AI đánh giá lại sau khi học.</span>
+        <span class="muted">Thân mật do AI đánh giá khi có dữ liệu tin nhắn thật của fan — không còn nút "học" mô phỏng.</span>
       </div>
     </div>
 
@@ -490,7 +485,7 @@
   </section>
 
   <footer class="muted" style="text-align:center;margin-top:26px;line-height:1.9">
-    Cyan Panda Tool v3.3 · Build <span id="buildTime2">—</span><br>
+    Cyan Panda Tool v3.6 · Build <span id="buildTime2">—</span><br>
     <a href="#" onclick="return false" style="color:#2E7D32">Privacy</a> · <a href="#" onclick="return false" style="color:#2E7D32">Terms</a> · © 2026 Cyan Panda<br>
     Verified bUQOGRMp7lPCfbDy3jV0mn5iTOaNM7Wy<br>
     OFFICIAL DOMAIN https://nameerrorcantnotfind.github.io/cyan-pandatool/
@@ -548,7 +543,7 @@
     </div>
     <p class="muted">Up GitHub 1 lần là chạy. FE đóng vẫn làm việc vì queue nằm trong Supabase + Edge Function chạy nền theo pg_cron.</p>
     <h3>1️⃣ GitHub Pages</h3>
-    <pre>git add . &amp;&amp; git commit -m "Cyan Panda Tool v3.3" &amp;&amp; git push
+    <pre>git add . &amp;&amp; git commit -m "Cyan Panda Tool v3.5" &amp;&amp; git push
 # Repo nameerrorcantnotfind/cyan-pandatool → Settings → Pages → Deploy from branch (main / root)
 # Site: https://nameerrorcantnotfind.github.io/cyan-pandatool/ (index.html + callback.html)</pre>
     <h3>2️⃣ Supabase — Tạo bảng</h3>
@@ -841,26 +836,22 @@ function previewWho(u, silent){
 <script>
 /* ---------- Modal Thêm / Sửa fan: xem bản v3.0 ở script cuối (chỉ Sửa — thân mật do AI đánh giá) ---------- */
 /* ---------- Inbox + xem trước + dịch AI ---------- */
-const REAL_USERS = [
-  { username:'linhchi.02', name:'Linh Chi', lastMessage:'Anh ơi tối nay live mấy giờ ạ 🐼', timeLabel:'22:12', daysAgo:0, unread:2,
-    convo:[['fan','Anh ơi hôm qua nhảy bài mới hay quá 😍'],['me','Cảm ơn em nha, tối nay anh tập bài mới nữa nè'],['fan','Anh ơi tối nay live mấy giờ ạ 🐼']] },
-  { username:'minhanhh.20', name:'Minh Anh', lastMessage:'Chị gửi sticker gấu nè, dễ thương hong', timeLabel:'21:47', daysAgo:0, unread:1,
-    convo:[['fan','Live hôm qua vui quá anh'],['me','Hihi cảm ơn chị, nhớ tối nay vào nữa nha'],['fan','Chị gửi sticker gấu nè, dễ thương hong']] },
-  { username:'khanh.ly.99', name:'Khánh Ly', lastMessage:'Tối nay em rủ bạn vào xem chung', timeLabel:'20:03', daysAgo:0, unread:3,
-    convo:[['fan','Anh ơi em share live cho bạn em rồi'],['me','Yêu quá, cảm ơn em nhiều nha'],['fan','Tối nay em rủ bạn vào xem chung']] },
-  { username:'be.bun.07', name:'Bé Bun', lastMessage:'Em học thuộc động tác rồi nè 💃', timeLabel:'Hôm qua 22:17', daysAgo:1, unread:0,
-    convo:[['fan','Động tác đoạn điệp khúc khó quá anh'],['me','Em tập chậm lại từng nhịp là được nè'],['fan','Em học thuộc động tác rồi nè 💃']] },
-  { username:'minji.kr', name:'Minji', lastMessage:'오빠 오늘 라이브 몇 시에 해요?', timeLabel:'21/10 19:44', daysAgo:2, unread:1,
-    convo:[['fan','안녕하세요 오빠! 춤 너무 멋있어요', 'Chào anh! Anh nhảy đẹp quá'],['me','Cảm ơn em nhiều nha 🐼'],['fan','오빠 오늘 라이브 몇 시에 해요?', 'Anh ơi hôm nay live mấy giờ ạ?']] },
-  { username:'trang.pham', name:'Trang Phạm', lastMessage:'Cảm ơn anh đã rep tin nhắn em', timeLabel:'19/10 11:20', daysAgo:4, unread:0,
-    convo:[['fan','Chào anh, em mới follow nè'],['fan','Cảm ơn anh đã rep tin nhắn em']] },
-  { username:'tuan.anh99', name:'Tuấn Anh', lastMessage:'ok em', timeLabel:'11/10 17:20', daysAgo:12, unread:0,
-    convo:[['fan','Nhảy đẹp lắm em'],['me','Em cảm ơn anh ạ'],['fan','ok em']] }
-];
+function getConvoUsers(){
+  const msgs = store.get('cp_messages', []);
+  const map = {};
+  msgs.forEach(m => { const u = map[m.username] = map[m.username] || { username: m.username, msgs: [] }; u.msgs.push(m); });
+  const arr = Object.values(map);
+  arr.sort((a, b) => ((b.msgs[b.msgs.length - 1] || {}).at || 0) - ((a.msgs[a.msgs.length - 1] || {}).at || 0));
+  return arr.map(u => {
+    const last = u.msgs[u.msgs.length - 1];
+    const fan = getFans().find(f => f.username === u.username);
+    return { username: u.username, name: fan ? fan.name : u.username, lastMessage: last ? last.content : '', timeLabel: last && last.at ? fmtTime(new Date(last.at)) : '', daysAgo: last ? Math.max(0, Math.floor((Date.now() - (last.at || 0)) / 86400000)) : 0, unread: u.msgs.filter(m => m.direction === 'in' && !m.read).length, convo: u.msgs.map(m => [m.direction === 'in' ? 'fan' : 'me', m.content]) };
+  });
+}
 let previewUser = null;
 function renderInbox(){
   const q = ($('inboxSearch').value || '').toLowerCase(), f = $('inboxFilter').value, days = $('inboxDays').value;
-  const list = REAL_USERS.filter(u => u.username.includes(q) && (f === 'all' || u.unread > 0) && (days === 'all' || u.daysAgo <= +days));
+  const list = getConvoUsers().filter(u => u.username.includes(q) && (f === 'all' || u.unread > 0) && (days === 'all' || u.daysAgo <= +days));
   $('inboxList').innerHTML = list.map(u =>
     '<div class="inboxitem' + (previewUser === u.username ? ' sel' : '') + '" onclick="previewInbox(\'' + u.username + '\')">' +
     '<div class="avatar" style="background:' + colorOf(u.username) + '">' + initialsOf(u.name) + '</div>' +
@@ -871,8 +862,8 @@ function renderInbox(){
 }
 function previewInbox(u){
   previewUser = u;
-  const user = REAL_USERS.find(x => x.username === u);
-  user.unread = 0; renderInbox();
+  const user = getConvoUsers().find(x => x.username === u) || { username: u, name: u, convo: [] };
+  const __cm = store.get('cp_messages', []); __cm.forEach(m => { if (m.username === u) m.read = true; }); store.set('cp_messages', __cm); renderInbox();
   $('inboxPreview').innerHTML =
     '<div style="border:1px solid #C8E6C9;border-radius:14px;padding:12px">' +
     '<div style="display:flex;gap:8px;align-items:center;padding:4px 2px 10px;border-bottom:1px solid #E8F5E9">' +
@@ -896,7 +887,7 @@ function rt(line){
   if (u){ const f = getFans().find(x => x.username === u); if (f){ cat = f.vip ? 'VIP' : f.priority === 'cao' ? 'Ưu tiên' : f.cat; days = (typeof f.lastDays === 'number' ? f.lastDays : ''); } }
   const div = document.createElement('div');
   div.dataset.cat = cat; div.dataset.user = u; div.dataset.days = days;
-  if (u){ div.style.cursor = 'pointer'; div.title = 'Bấm để mở hội thoại @' + u; div.onclick = () => { goTab('inbox'); if (typeof previewInbox === 'function' && REAL_USERS.some(x => x.username === u)) previewInbox(u); window.scrollTo({ top: 0, behavior: 'smooth' }); }; }
+  if (u){ div.style.cursor = 'pointer'; div.title = 'Bấm để mở hội thoại @' + u; div.onclick = () => { goTab('inbox'); if (typeof previewInbox === 'function') previewInbox(u); window.scrollTo({ top: 0, behavior: 'smooth' }); }; }
   div.innerHTML = '<span class="lt">🍀 ' + fmtTime(new Date()) + '</span> ' + line;
   box.appendChild(div);
   while (box.children.length > 60) box.removeChild(box.firstChild);
@@ -926,7 +917,7 @@ function renderSendStatus(){
     rows.map(r => '<tr><td>@' + r.username + '</td><td>' + (r.status === 'Đã gửi' ? '<span class="badge green">Đã gửi</span>' : r.status === 'Thất bại' ? '<span class="badge red">Thất bại</span>' : '<span class="badge gray">' + r.status + '</span>') + '</td><td>' + (r.time || '—') + '</td></tr>').join('') + '</tbody></table>';
 }
 function enqueueBulk(fromQueueBtn){
-  if (typeof LIVE_ON !== 'undefined' && LIVE_ON){ I('error','ERR_001','Đang bật chức năng Live — tool không gửi tin hàng loạt, chỉ đọc tin để học','Live mode'); return; }
+  if (typeof LIVE_ON !== 'undefined' && LIVE_ON){ I('error','ERR_001','Đang bật chức năng Live — tool đang khóa gửi tin hàng loạt (chỉ đọc)','Live mode'); return; }
   const recips = resolveRecipients(), raw = $('bulkText').value.trim(), mode = $('bulkMode').value;
   if (!recips.length){ I('error','LIC_001','Chưa có người nhận — kiểm tra preset / danh sách WHO đã chọn','Gửi hàng loạt'); return; }
   if (!raw){ I('error','LIC_001','Chưa nhập nội dung tin nhắn','Gửi hàng loạt'); return; }
@@ -942,65 +933,16 @@ function enqueueBulk(fromQueueBtn){
   store.set('cp_batch', { total: recips.length, done: 0, ok: 0, fail: 0, active: true });
   renderQueue(); renderSendStatus(); renderMemory();
   if (fromQueueBtn) I('success','QUEUE_001','Đã thêm ' + recips.length + ' tin vào hàng đợi (QUEUE_001) — Edge sẽ xử lý nền kể cả khi đóng FE','Thêm vào hàng đợi');
-  else I('success','MSG_001','Bắt đầu gửi hàng loạt tới ' + recips.length + ' người — theo nhóm nhỏ tránh bị chặn, check status per-user bên dưới','Gửi hàng loạt');
-  rt('Nhận lệnh gửi tới ' + recips.length + ' người (' + (mode === 'nhom' ? 'gửi nhóm' : 'riêng từng người') + ') — chia ' + groupFans(recips, +($('batchSize')?.value || 3)).length + ' nhóm batch');
+  else I('success','MSG_001','Đã xếp ' + recips.length + ' tin vào hàng đợi (bản nháp) — TikTok API không hỗ trợ gửi DM trực tiếp nên tool KHÔNG tự gửi; kiểm tra ở Hàng đợi bên dưới','Gửi hàng loạt');
+  rt('Đã xếp hàng đợi ' + recips.length + ' tin nháp (' + (mode === 'nhom' ? 'gửi nhóm' : 'riêng từng người') + ') — chờ xử lý thủ công, tool không tự gửi DM');
 }
 function sendBulk(){ enqueueBulk(false); }
 function queueBulk(){ enqueueBulk(true); }
 let rtOn = true;
 function toggleRealtime(){ rtOn = !rtOn; $('rtToggle').textContent = rtOn ? '⏸️ Tắt realtime' : '▶️ Bật realtime'; I('success','SYS_002',(rtOn ? 'Đã bật' : 'Đã tắt') + ' realtime log inbox','Realtime'); }
-let sleepLogged = false;
-setInterval(() => {
-  const q = store.get('cp_queue', []);
-  const job = q.find(j => j.status === 'pending');
-  if (!job){ if (q.length && !sleepLogged && q.every(j => j.status === 'sent' || j.status === 'failed')){ rt('Hệ thống vào chế độ ngủ - Panda 💤'); sleepLogged = true; } return; }
-  sleepLogged = false;
-  job.status = 'processing'; store.set('cp_queue', q); renderQueue();
-  const rows = store.get('cp_send_status', []); const row = rows.find(r => r.id === job.id);
-  if (row){ row.status = 'Đang gửi'; store.set('cp_send_status', rows); renderSendStatus(); }
-  setTimeout(() => {
-    const fail = Math.random() < 0.08;
-    job.status = fail ? 'failed' : 'sent'; store.set('cp_queue', q); renderQueue();
-    if (row){ row.status = fail ? 'Thất bại' : 'Đã gửi'; row.time = fmtTime(new Date()); store.set('cp_send_status', rows); renderSendStatus(); }
-    rt('@' + job.username + (fail ? ' gửi THẤT BẠI — sẽ thử lại sau' : ' đã gửi tin nhắn - AI rep tự động'));
-    const b = store.get('cp_batch', null);
-    if (b && b.active){ b.done++; if (fail) b.fail++; else b.ok++;
-      if (b.done >= b.total){ b.active = false; I('success','MSG_001','Đã gửi hàng loạt tới ' + b.total + ' người — ' + b.ok + ' thành công, ' + b.fail + ' thất bại','Gửi hàng loạt'); }
-      store.set('cp_batch', b); }
-    renderMemory();
-  }, 900);
-}, 2600);
+/* v3.6: da bo bo xu ly gui tin mo phong (tu danh dau Da gui/That bai ngau nhien). Hang doi chi luu ban nhap that — TikTok API chinh thuc khong ho tro gui DM. */
 
-/* ---------- Fan Mới: quét + tự thêm ---------- */
-const NEW_POOL = [
-  { username:'hao.nhi.03', name:'Hảo Nhi', src:'Vừa nhắn tin lần đầu' },
-  { username:'phuong.anh.22', name:'Phương Anh', src:'Mới follow hôm nay' },
-  { username:'duc.manh.99', name:'Đức Mạnh', src:'Vừa nhắn tin lần đầu' },
-  { username:'thao.nguyen.07', name:'Thảo Nguyên', src:'Mới follow hôm nay' },
-  { username:'jun.seok.kr', name:'Jun Seok', src:'Vừa nhắn tin lần đầu', country:'KR' }
-];
-let scanResults = [];
-function scanNewFans(){
-  const fans = getFans();
-  scanResults = NEW_POOL.filter(p => !fans.some(f => f.username === p.username)).slice(0, 3);
-  if (!scanResults.length){ $('newFanList').innerHTML = '<p class="muted">Không còn fan mới nào chưa thêm — pool đã quét hết.</p>'; I('success','SYS_002','Quét fan mới: không phát hiện thêm fan mới','Quét fan mới'); return; }
-  $('newFanList').innerHTML = scanResults.map(p =>
-    '<div class="whoitem"><div class="avatar" style="background:' + colorOf(p.username) + ';width:36px;height:36px;font-size:12px">' + initialsOf(p.name) + '</div>' +
-    '<div style="flex:1"><b>@' + p.username + '</b> · ' + p.name + '<div class="muted">' + p.src + '</div></div>' +
-    '<button class="btn small" onclick="addNewFan(\'' + p.username + '\')">➕ Thêm vào bảng fan</button></div>').join('');
-  I('success','SYS_002','Quét fan mới: phát hiện ' + scanResults.length + ' người chưa có trong bảng fan','Quét fan mới');
-}
-function addNewFan(u, silent){
-  const p = NEW_POOL.find(x => x.username === u) || { username:u, name:u, src:'Tự thêm khi nhắn tin' };
-  const db = getDB();
-  if (db.fans.some(f => f.username === u)) return;
-  db.fans.push({ username:u, name:p.name, call:'em', intimacy:5, time:'Tối', style:'Dịu dàng', country:p.country || 'VN', cat:'Fan mới', vip:false, priority:'vừa', note:p.src });
-  saveDB(db);
-  const rec = store.get('cp_recent_new', []); rec.unshift({ username:u, when: fmtDT(new Date()) }); store.set('cp_recent_new', rec.slice(0, 10));
-  renderFans(); renderInbox(); renderBulkCount(); renderRecentNew();
-  if (!silent) I('success','SYS_002','Đã thêm fan mới @' + u + ' vào bảng (danh mục Fan Mới)','Fan Mới');
-  rt('Fan mới @' + u + ' đã vào Fan Mới 🌱');
-}
+/* v3.6: da bo NEW_POOL + quet fan moi gia. Ban scanNewFans that (quet tren bang fan that) o script sau. */
 function renderRecentNew(){
   const rec = store.get('cp_recent_new', []);
   $('recentNewFans').innerHTML = rec.length ? rec.map(r => '<div style="padding:5px 0;border-bottom:1px dashed #E8F5E9">🌱 <b>@' + r.username + '</b> <span class="muted">· ' + r.when + '</span></div>').join('') : 'Chưa có fan mới nào được thêm.';
@@ -1041,71 +983,22 @@ function insertHealthTemplate(){
 }
 
 /* ---------- Đào tạo AI + Memory DB (MEM_001 tăng dần) ---------- */
-const MEMORY_POOL = [
-  { content:'Fan hay hỏi giờ live trong khung 19h–20h — rep kèm giờ live tối nay', emotion:'Tò mò', importance:'high', times:34 },
-  { content:'Linh Chi thích được gọi "em" + icon 🐼, hay tặng quà đầu live', emotion:'Thân mật', importance:'high', times:21 },
-  { content:'Sticker gấu = cảm xúc tích cực — rep lại bằng vibe dễ thương', emotion:'Vui vẻ', importance:'mid', times:27 },
-  { content:'Fan Hàn Quốc nhắn tiếng Hàn — dịch trước rồi rep, giữ xưng hô thân mật', emotion:'Thân thiện', importance:'mid', times:8 },
-  { content:'Fan buồn thì hỏi thăm sức khỏe trước, không quảng bá live', emotion:'Dịu dàng', importance:'high', times:9 },
-  { content:'Điệp khúc bài mới là đoạn fan hỏi học động tác nhiều nhất', emotion:'Hào hứng', importance:'low', times:15 }
-];
+/* v3.6: da xoa MEMORY_POOL (ky uc mau bi a). */
 function renderMemory(){
   const db = getDB(), m = db.ai;
-  $('aiPercent').textContent = m.percent || 0;
-  $('aiCount').textContent = (m.learned || 0).toLocaleString('vi-VN');
+  $('aiPercent').textContent = getFans().length;
+  $('aiCount').textContent = (db.memories || []).length;
   $('aiUpdated').textContent = m.updated || '—';
-  $('aiQueueCount').textContent = store.get('cp_queue', []).filter(j => j.status === 'pending' || j.status === 'processing').length;
+  $('aiQueueCount').textContent = store.get('cp_queue', []).filter(j => j.status === 'pending').length;
   $('dailyLearn').checked = !!m.dailyLearn;
   $('aiActive').value = m.aiActive ?? 60; $('aiActiveVal').textContent = m.aiActive ?? 60;
-  $('trainState').textContent = m.learned ? 'Đã học ' + m.learned.toLocaleString('vi-VN') + ' tin · hiểu ' + m.percent + '%' : 'Chưa tải lịch sử.';
+  $('trainState').textContent = 'Dữ liệu thật: ' + getFans().length + ' fan · ' + (db.memories || []).length + ' ký ức · ' + getDocs().length + ' tài liệu.';
   const f = $('memFilter')?.value || 'all';
   const mems = (db.memories || []).filter(x => f === 'all' || x.importance === f);
   $('memoryBox').innerHTML = mems.length ? mems.map(x =>
     '<div style="padding:8px 0;border-bottom:1px dashed #E8F5E9">🧠 ' + x.content +
     '<div class="muted">Cảm xúc: ' + x.emotion + ' · Quan trọng: ' + (x.importance === 'high' ? 'Cao' : x.importance === 'mid' ? 'Trung bình' : 'Thấp') + ' · Đã nhắc: ' + x.times + ' lần</div></div>').join('')
-    : 'Chưa có ký ức nào khớp. Hãy tải lịch sử để AI bắt đầu học — ký ức cộng dồn dần (MEM_001), không ghi đè.';
-}
-function appendMemories(db, n){
-  db.memories = db.memories || [];
-  for (let k = 0; k < n; k++){
-    const p = MEMORY_POOL[Math.floor(Math.random() * MEMORY_POOL.length)];
-    const ex = db.memories.find(x => x.content === p.content);
-    if (ex) ex.times += 1; else db.memories.push({ ...p });
-  }
-}
-function trainAI(){
-  const days = 30;
-  const btn = $('btnTrain'); btn.disabled = true;
-  let p = 0; $('trainBar').style.width = '0%';
-  I('success','INBOX_FETCH','Đã tải lịch sử 30 ngày thật — dùng cho AI training (fetch messages WHERE timestamp >= now()-30d)','Đào tạo AI');
-  const iv = setInterval(() => {
-    p = Math.min(100, p + 15); $('trainBar').style.width = p + '%';
-    $('trainState').textContent = 'Đang tải & phân tích lịch sử ' + days + ' ngày… ' + p + '%';
-    if (p >= 100){
-      clearInterval(iv); btn.disabled = false;
-      const db = getDB();
-      const gained = days * 41;
-      db.ai.learned = (db.ai.learned || 0) + gained;
-      db.ai.percent = Math.min(95, 20 + Math.floor(db.ai.learned / 25));
-      db.ai.updated = fmtDT(new Date());
-      appendMemories(db, 3); saveDB(db); renderMemory(); renderStories();
-      I('success','AI_003','AI_003 · Phân tích xưng hô hoàn tất — đã map xưng hô + style cho ' + db.fans.length + ' fan từ lịch sử 30 ngày','Đào tạo AI');
-      I('success','AI_003','Học xong ' + days + ' ngày: +' + gained.toLocaleString('vi-VN') + ' tin · AI hiểu CYAN ' + db.ai.percent + '% = min(95, 20 + số tin) · lưu DB panda_ai_db_v261','Đào tạo AI');
-      I('success','MEM_001','Memory lưu tăng dần: cộng thêm 3 ký ức mới, không ghi đè ký ức cũ (MEM_001)','Memory DB');
-      rt('AI_TRAIN hoàn tất — AI hiểu CYAN ' + db.ai.percent + '% sau lịch sử ' + days + ' ngày');
-    }
-  }, 150);
-}
-function relearnAI(){ const db = getDB(); db.ai.updated = fmtDT(new Date()); saveDB(db); renderMemory(); I('success','AI_003','Đã học lại từ DB hiện có — % hiểu giữ ' + (db.ai.percent || 0) + '%, ký ức không bị xóa','Đào tạo AI'); }
-function simulateDaily(){
-  const db = getDB();
-  db.ai.learned = (db.ai.learned || 0) + 55;
-  db.ai.percent = Math.min(95, (db.ai.percent || 0) + 2);
-  db.ai.updated = fmtDT(new Date());
-  appendMemories(db, 1);
-  db.stories.unshift({ date: new Date().toLocaleDateString('vi-VN'), participants:'Fan trong ngày', mood:'Vui vẻ', emotion:'Thân thiện', story:'Mô phỏng học thêm hôm nay: AI đọc 2–3 stories mới, cập nhật xưng hô và mẫu câu theo fan vừa nhắn.', keywords:['học thêm','stories','cập nhật'] });
-  saveDB(db); renderMemory(); renderStories();
-  I('success','SYS_001','Mô phỏng học thêm hôm nay +2% · +2-3 stories · AUTO saved','Đào tạo AI');
+    : 'Chưa có ký ức nào. Ký ức chỉ được ghi từ sự kiện thật (bật gói sáng tạo, duyệt tin…) — không còn ký ức mẫu.';
 }
 function wipeDB(){
   if (!confirm('Xóa DB ký ức AI (memories + stories + % hiểu)? Bảng fan được giữ nguyên.')) return;
@@ -1129,14 +1022,16 @@ function renderStories(){
     '<tr><td>' + x.s + '</td><td>' + x.handle + '</td><td>' + x.learned + '</td><td><b>' + x.times + '</b></td></tr>').join('');
 }
 function renderHeat(){
-  const vals = [1,0,0,0,0,1,2,3,4,3,4,5,6,4,3,3,4,5,7,9,10,9,6,3];
-  $('heatMap').innerHTML = vals.map((v, h) => '<div style="background:rgba(46,125,50,' + (0.08 + v * 0.09) + ')" title="' + h + 'h: ' + v + '0%">' + h + 'h</div>').join('');
-  const words = [['live',22],['nhảy',19],['yêu',16],['tối nay',15],['bài mới',14],['đẹp',14],['sticker',13],['cảm ơn',12],['gấu',12],['hẹn',11]];
-  $('wordCloud').innerHTML = words.map(w => '<span style="font-size:' + w[1] + 'px">' + w[0] + '</span>').join(' ');
-  const days = [['17/10',70],['18/10',78],['19/10',65],['20/10',82],['21/10',88],['22/10',91],['23/10',85]];
-  $('emotionLine').innerHTML = days.map(d =>
-    '<div class="row" style="gap:8px;margin-top:5px"><span class="muted" style="width:44px">' + d[0] + '</span><div class="progress" style="flex:1"><div style="width:' + d[1] + '%"></div></div><b>' + d[1] + '%</b></div>').join('') +
-    '<p class="muted" style="margin-top:6px">% cảm xúc tích cực theo ngày — AI đọc timeline này để chọn vibe rep.</p>';
+  $('heatMap').innerHTML = '<p class="muted">Đã bỏ heatmap mẫu — chưa có dữ liệu hoạt động thật để vẽ.</p>';
+  const texts = [];
+  getDocs().forEach(d => texts.push(d.title + ' ' + d.content));
+  store.get('cp_messages', []).forEach(m => texts.push(m.content || ''));
+  getFans().forEach(f => { if (f.note) texts.push(f.note); });
+  const freq = {};
+  texts.join(' ').toLowerCase().replace(/[^a-zà-ỹ0-9\s]/gi, ' ').split(/\s+/).forEach(w => { if (w.length > 2) freq[w] = (freq[w] || 0) + 1; });
+  const top = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 12);
+  $('wordCloud').innerHTML = top.length ? top.map(w => '<span style="font-size:' + Math.min(30, 11 + w[1] * 2) + 'px">' + w[0] + '</span>').join(' ') : '<span class="muted">Chưa có dữ liệu thật (tài liệu / tin nhắn) để dựng word cloud.</span>';
+  $('emotionLine').innerHTML = '<p class="muted">Đã bỏ biểu đồ cảm xúc mẫu — chỉ hiển thị khi có dữ liệu tin nhắn thật.</p>';
 }
 
 /* ---------- Tài liệu dạy AI (panda_docs_db_v261) ---------- */
@@ -1171,12 +1066,8 @@ function openQr(){
 }
 function closeQr(){ $('qrModal').classList.remove('open'); }
 function qrSuccess(){
-  const data = { access_token:'act.' + Math.random().toString(36).slice(2, 26), open_id:'oid_' + Math.random().toString(36).slice(2, 14), expires_in:604800, scope:'user.info.basic,user.info.stats,video.list', expires_at: Date.now() + 604800 * 1000 };
-  store.set('panda_real_token_v262', data);
-  store.set('panda_real_account_v262', { username:'cyan.khotinh' });
-  closeQr(); renderConnect();
-  I('success','TIK_LOGIN_SUCCESS','Đã duyệt @cyan.khotinh — Token đang hoạt động · đã lưu panda_real_token_v262 (expires_in 604800)','QR connect');
-  rt('QR connect thành công — Token đang hoạt động ✅');
+  closeQr();
+  I('error','ERR_001','Nút xác nhận này không còn tự đăng nhập — hãy dùng "🔗 Lấy link đăng nhập" và hoàn tất đăng nhập ngay trong trình duyệt này; TikTok trả code về, tool sẽ đổi lấy token + dữ liệu thật qua tiktok-proxy.','Đăng nhập thật');
 }
 function disconnectTikTok(){ store.del('panda_real_token_v262'); store.del('panda_real_account_v262'); renderConnect(); I('success','TIK_LOGIN_SUCCESS','Đã ngắt kết nối & xóa token','Ngắt kết nối'); }
 function renderConnect(){
@@ -1190,11 +1081,24 @@ function renderConnect(){
 
 }
 function toggleSecret(){ const s = $('cc_secret'); s.type = s.type === 'password' ? 'text' : 'password'; }
-function checkClient(){
-  const key = $('ttKey').value.trim();
-  if (!key.startsWith('sbaw')){ I('error','ERR_001','Client không hợp lệ — Kiểm tra lại Secret','Check Client'); $('sbState').textContent = '❌ Client không hợp lệ.'; return; }
-  $('sbState').textContent = '✅ Client hợp lệ — open.tiktokapis.com trả ok:true.';
-  I('success','SYS_001','Check Client: ok:true — Client hợp lệ (key sbaw7…, mock check với TikTok OAuth endpoint)','Check Client');
+async function checkClient(){
+  const key = $('ttKey').value.trim(), sec = $('cc_secret').value.trim(), red = $('cc_redirect').value.trim();
+  const url = $('sb_url').value.trim(), anon = $('sb_key').value.trim();
+  if (!key){ $('sbState').textContent = '❌ Chưa có Client Key trên form.'; return; }
+  const fmtOk = key.startsWith('sbaw') && red.startsWith('https://');
+  if (!fmtOk){ $('sbState').textContent = '❌ Định dạng chưa đúng: Key phải bắt đầu bằng sbaw…, Redirect URI phải là https.'; I('error','ERR_001','Check Client: định dạng Key/Redirect chưa đúng (kiểm tra tại máy)','Check Client'); return; }
+  let msg = '✔️ Định dạng Key + Redirect hợp lệ (mới kiểm tra TẠI MÁY). ';
+  const base = (url && anon) ? { url, key: anon } : (typeof supaBase === 'function' ? supaBase() : null);
+  if (base){
+    try{
+      const r = await fetch(base.url.replace(/\/$/,'') + '/functions/v1/tiktok-proxy', { method:'POST', headers:{ 'Content-Type':'application/json', apikey: base.key, Authorization: 'Bearer ' + base.key }, body: '{}' });
+      const d = await r.json();
+      if (d && d.error === 'missing_code'){ msg += '✔️ tiktok-proxy PHẢN HỒI THẬT — Supabase + function đang sống. '; I('success','SUP_001','Check Client THẬT: tiktok-proxy trả missing_code (function đã deploy, đang hoạt động)','Check Client'); }
+      else { msg += '⚠️ Proxy phản hồi: ' + JSON.stringify(d).slice(0, 140) + ' '; I('error','SUP_001','Check Client: proxy phản hồi lạ — ' + JSON.stringify(d).slice(0, 140),'Check Client'); }
+    }catch(e){ msg += '❌ Không gọi được tiktok-proxy (' + e.message + '). '; I('error','ERR_001','Check Client: không gọi được tiktok-proxy — ' + e.message,'Check Client'); }
+  } else msg += '(Chưa có Supabase URL + Anon Key nên chưa kiểm tra được kết nối proxy.) ';
+  msg += 'Key/Secret đúng hay sai chỉ TikTok xác nhận khi ĐĂNG NHẬP THẬT (đổi code lấy token).';
+  $('sbState').textContent = msg;
 }
 function saveClient(){
   const url = $('sb_url').value.trim(), anon = $('sb_key').value.trim();
@@ -1227,39 +1131,19 @@ $('qrModal').addEventListener('click', e => { if (e.target === $('qrModal')) clo
   $('rtLog').innerHTML = '';
   rt('Panda khởi động xong — queue & ký ức đã nạp từ panda_ai_db_v261 💾');
   const code = new URLSearchParams(location.search).get('code');
-  if (code){ const data = { access_token:'act.' + Math.random().toString(36).slice(2, 26), open_id:'oid_' + Math.random().toString(36).slice(2, 14), expires_in:604800, scope:'user.info.basic,user.info.stats,video.list', expires_at: Date.now() + 604800 * 1000 }; store.set('panda_real_token_v262', data); store.set('panda_real_account_v262', { username:'cyan.khotinh' }); renderConnect(); goTab('connect'); I('success','TIK_LOGIN_SUCCESS','Đã nhận code từ URL callback — Token đang hoạt động, đã lưu panda_real_token_v262','Callback'); }
+  if (code){ try{ sessionStorage.setItem('cp_auth_code', code); }catch(e){} goTab('connect'); I('success','LIC_101','Đã nhận Authorization Code từ TikTok callback — sẽ đổi lấy token THẬT qua tiktok-proxy (v3.5)','Callback'); }
   I('success','SYS_001','Khởi động Cyan Panda v3.1 — Build ' + bt,'Khởi động');
-  /* Realtime mô phỏng: fan nhắn đến, fan lạ tự thêm nếu bật auto-add */
+  /* v3.6: dong bo tin THAT tu Supabase moi 60s khi realtime bat */
   setInterval(() => {
     if (!rtOn) return;
-    if (!store.get('panda_real_token_v262', null)) return;
-    const fans = getFans(); const f = fans[Math.floor(Math.random() * fans.length)];
-    const events = ['@' + (f ? f.username : 'fan') + ' vừa nhắn tin — AI đang phân tích', 'Phân tích sticker mới: cảm xúc tích cực 🧸', '@' + (f ? f.username : 'fan') + ' đang gõ…'];
-    rt(events[Math.floor(Math.random() * events.length)]);
-    if (Math.random() < 0.25){
-      const cand = NEW_POOL.find(p => !getFans().some(x => x.username === p.username));
-      if (cand){ rt('Phát hiện @' + cand.username + ' nhắn tin lần đầu 🌱'); if (store.get('cp_autoadd', false)) addNewFan(cand.username, true); }
-    }
-  }, 55000);
+    if (typeof isLogged === 'function' && !isLogged()) return;
+    if (typeof pollScan === 'function') pollScan();
+  }, 60000);
 })();
 </script>
 <script>
 /* ---------- CHỜ DUYỆT: AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s ---------- */
-function genSuggestions(fan, msg){
-  const m = (msg || '').toLowerCase();
-  let pool;
-  if (m.includes('mấy giờ') || m.includes('live'))
-    pool = ['Tối nay 20h {xungHo} nhớ vào nha {ten} 🐼', '{ten} ơi 20h nè, Panda chờ {xungHo} đó — có bài mới luôn', '20h tối nay nha {xungHo}, vào sớm Panda chào {ten} đầu live nè'];
-  else if (m.includes('sticker'))
-    pool = ['Hihi sticker gấu dễ thương quá {xungHo} 🧸', '{ten} gửi sticker cưng xỉu, Panda thích lắm luôn', 'Cưng quá {xungHo} ơi, tối nay vào live Panda gửi lại sticker cho {ten} nè'];
-  else if (m.includes('khỏe') || m.includes('mệt') || m.includes('buồn'))
-    pool = ['{xungHo} ơi, khỏe không? Nhớ giữ sức khỏe nha {ten} 💚', 'Nghe {xungHo} vậy Panda lo nè, nghỉ ngơi nhiều vào nha {ten}', '{ten} đừng buồn nữa, tối nay vào live Panda nhảy cho {xungHo} vui nè 🐼'];
-  else if (m.includes('bạn') || m.includes('rủ') || m.includes('share'))
-    pool = ['Yêu quá, cảm ơn {ten} đã rủ bạn vào xem chung 🐼 tối nay 20h nha {xungHo}', '{xungHo} tuyệt vời nhất luôn, hẹn {ten} với bạn tối nay 20h nè', 'Cảm ơn {ten} nhiều lắm, tối nay Panda nhảy bài mới cho {xungHo} xem'];
-  else
-    pool = ['Cảm ơn {ten} nè 🐼 tối nay 20h CYAN live, {xungHo} vào chơi nha', 'Hihi {xungHo} dễ thương quá, Panda nhớ {ten} lắm', '{ten} ơi Panda rep {xungHo} liền nè — tối nay có bài mới đó'];
-  return pool.map(t => personalize(t, fan));
-}
+/* v3.6: da xoa genSuggestions mau co san — goi y chi sinh bang API AI that (script cuoi). */
 function getPending(){
   let p = store.get('cp_pending', null);
   if (!p){
@@ -1281,14 +1165,14 @@ function renderPending(){
       '<div style="flex:1;min-width:0"><b>@' + it.username + '</b> ' + badgeHTML({ ...fan, username: it.username }) +
       '<div style="margin-top:3px">💬 “' + it.msg + '”</div>' +
       (it.status === 'waiting'
-        ? '<div style="margin-top:8px"><b>⏳ Đã duyệt — sẽ gửi sau <span data-cd="' + it.id + '">10</span>s</b> · <button class="btn small danger" onclick="cancelApprove(\'' + it.id + '\')">Hủy</button></div>'
+        ? '<div style="margin-top:8px"><b>⏳ Đã duyệt — tự xác nhận sau <span data-cd="' + it.id + '">10</span>s</b> · <button class="btn small danger" onclick="cancelApprove(\'' + it.id + '\')">Hủy</button></div>'
         : it.editing
           ? '<textarea id="edit_' + it.id + '" rows="2" style="margin-top:8px">' + it.suggestions[it.sel] + '</textarea><div class="row" style="margin-top:6px"><button class="btn small" onclick="saveEditPending(\'' + it.id + '\')">💾 Lưu gợi ý</button><button class="btn small ghost" onclick="cancelEditPending(\'' + it.id + '\')">Hủy sửa</button></div>'
-          : '<div style="margin-top:8px">' + it.suggestions.map((s, i) =>
-              '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;color:#1B2A1C;margin-bottom:6px;cursor:pointer"><input type="radio" name="sg_' + it.id + '" style="width:auto;margin-top:3px" ' + (i === it.sel ? 'checked' : '') + ' onchange="selectSugg(\'' + it.id + '\',' + i + ')"><span>' + s + '</span></label>').join('') + '</div>' +
-            '<div class="row" style="margin-top:6px"><button class="btn small" onclick="approvePending(\'' + it.id + '\')">✅ Duyệt &amp; gửi</button><button class="btn small ghost" onclick="editPending(\'' + it.id + '\')">✏️ Sửa</button><button class="btn small danger" onclick="rejectPending(\'' + it.id + '\')">🚫 Từ chối</button></div>') +
+          : (!it.suggestions || !it.suggestions.length ? '<div style="margin-top:8px"><button class="btn small" onclick="genForPending(\'' + it.id + '\')">🤖 Sinh 3 gợi ý bằng AI thật</button> <span class="muted">Chưa có gợi ý — gọi API AI (cần KEY trong Setting).</span></div>' : '<div style="margin-top:8px">' + it.suggestions.map((s, i) =>
+              '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;color:#1B2A1C;margin-bottom:6px;cursor:pointer"><input type="radio" name="sg_' + it.id + '" style="width:auto;margin-top:3px" ' + (i === it.sel ? 'checked' : '') + ' onchange="selectSugg(\'' + it.id + '\',' + i + ')"><span>' + s + '</span></label>').join('') + '</div>') +
+            '<div class="row" style="margin-top:6px"><button class="btn small" onclick="approvePending(\'' + it.id + '\')">✅ Duyệt</button><button class="btn small ghost" onclick="editPending(\'' + it.id + '\')">✏️ Sửa</button><button class="btn small danger" onclick="rejectPending(\'' + it.id + '\')">🚫 Từ chối</button></div>') +
       '</div></div></div>';
-  }).join('') : '<p class="muted">Hàng chờ đang trống — tin nhắn mới đến sẽ xuất hiện tại đây kèm 3 gợi ý AI.</p>';
+  }).join('') : '<p class="muted">Hàng chờ đang trống — tin thật đồng bộ từ Supabase sẽ xuất hiện tại đây; bấm “Sinh 3 gợi ý” để AI thật gợi ý trả lời.</p>';
 }
 function selectSugg(id, i){ const p = getPending(); const it = p.find(x => x.id === id); if (it){ it.sel = i; savePending(p); } }
 function editPending(id){ const p = getPending(); const it = p.find(x => x.id === id); if (it){ it.editing = true; savePending(p); renderPending(); } }
@@ -1301,7 +1185,7 @@ function saveEditPending(id){
 }
 const approveTimers = {};
 function approvePending(id){
-  if (typeof LIVE_ON !== 'undefined' && LIVE_ON){ I('error','ERR_001','Đang bật chức năng Live — tool không rep/gửi tin, chỉ đọc tin để học','Live mode'); return; }
+  if (typeof LIVE_ON !== 'undefined' && LIVE_ON){ I('error','ERR_001','Đang bật chức năng Live — tool đang khóa duyệt/gửi tin (chỉ đọc)','Live mode'); return; }
   const p = getPending(); const it = p.find(x => x.id === id); if (!it || it.status === 'waiting') return;
   it.status = 'waiting'; it.deadline = Date.now() + 10000; savePending(p); renderPending();
   I('success','MSG_001','Đã duyệt @' + it.username + ' — Hủy trong 10s','Duyệt tin');
@@ -1315,9 +1199,22 @@ function cancelApprove(id){
 }
 function finalizeApprove(id){
   const p = getPending(); const it = p.find(x => x.id === id); if (!it) return;
+  const text = it.suggestions[it.sel] || '';
+  const jid = 's' + Date.now();
   savePending(p.filter(x => x.id !== id)); renderPending();
-  I('success','MSG_001','Đã gửi thành công tới @' + it.username + ': "' + it.suggestions[it.sel].slice(0, 60) + '…"','Gửi tin');
-  rt('@' + it.username + ' đã gửi tin nhắn — tin đã duyệt được gửi đi ✅');
+  const q = store.get('cp_queue', []);
+  q.push({ id: jid, username: it.username, content: text, status: 'pending' });
+  store.set('cp_queue', q);
+  const rows = store.get('cp_send_status', []);
+  rows.push({ id: jid, username: it.username, status: 'Đã duyệt — trong hàng đợi', time: fmtTime(new Date()) });
+  store.set('cp_send_status', rows);
+  sbInsert('queue', { fan_username: it.username, content: text, status: 'pending' });
+  sbInsert('messages', { fan_username: it.username, direction: 'out', content: text });
+  const db = getDB();
+  db.memories.push({ content: 'Đã duyệt câu trả lời cho @' + it.username + ': "' + text.slice(0, 60) + '"', emotion: 'Thân thiện', importance: 'mid', times: 1 });
+  saveDB(db); renderMemory(); renderQueue(); if (typeof renderSendStatus === 'function') renderSendStatus();
+  I('success','MSG_001','Đã duyệt @' + it.username + ' — câu trả lời đã vào HÀNG ĐỢI (bản nháp) + lưu Supabase. Nói thật: TikTok API không hỗ trợ gửi DM nên tin CHƯA tới fan.','Duyệt tin');
+  rt('@' + it.username + ' đã duyệt trả lời — đưa vào hàng đợi (chưa gửi đi — TikTok không có API DM)');
 }
 function rejectPending(id){
   const p = getPending(); const it = p.find(x => x.id === id);
@@ -1334,31 +1231,8 @@ setInterval(() => {
     document.querySelectorAll('[data-cd]').forEach(el => { if (el.dataset.cd === w.id) el.textContent = left; });
   } else banner.style.display = 'none';
 }, 250);
-const INCOMING_POOL = [
-  { username:'linhchi.02', msg:'Anh ơi hôm nay thế nào? Tối nay live mấy giờ ạ' },
-  { username:'be.bun.07', msg:'Em gửi sticker mèo nè, anh thấy sao' },
-  { username:'minji.kr', msg:'오빠 오늘 라이브 몇 시에 해요?' },
-  { username:'trang.pham', msg:'Hôm nay em hơi buồn, anh có live không ạ' },
-  { username:'hao.nhi.03', msg:'Chào anh, em mới follow, tối nay live mấy giờ ạ' }
-];
-function simulateIncoming(silent){
-  if (typeof LIVE_ON !== 'undefined' && LIVE_ON){ if (typeof liveLearnTick === 'function') liveLearnTick(); return; }
-  const pick = INCOMING_POOL[Math.floor(Math.random() * INCOMING_POOL.length)];
-  if (!getFans().some(f => f.username === pick.username) && store.get('cp_autoadd', false)) addNewFan(pick.username, true);
-  const fan = getFans().find(f => f.username === pick.username) || { username: pick.username, name: pick.username, call:'em' };
-  const p = getPending();
-  p.unshift({ id:'p' + Date.now(), username: pick.username, msg: pick.msg, sel:0, status:'pending', editing:false, suggestions: genSuggestions(fan, pick.msg) });
-  savePending(p); renderPending();
-  rt('@' + pick.username + ' đã gửi tin nhắn — AI sinh 3 gợi ý, đẩy vào Chờ duyệt 🕐');
-  if (!silent) I('success','INBOX_FETCH','Tin mới từ @' + pick.username + ' — AI đã sinh 3 gợi ý, xem ở Chờ duyệt','Tin nhắn đến');
-}
-/* Init phần Chờ duyệt + LIC_002 auto bump */
-(function initV29(){
-  renderPending();
-  I('success','LIC_002','Auto bump from v2.9 + incremental fix → Đã lên phiên bản v3.0','Phiên bản');
-  setInterval(() => { if (typeof rtOn !== 'undefined' && rtOn && Math.random() < 0.35) simulateIncoming(true); }, 75000);
-})();
-</script>
+(function initV29(){ renderPending(); })();
+</script></script>
 <script>
 /* ================= v3.0 ENGINE: Sleep · Live · Realtime/Polling · Providers · Learn picker · Packs ================= */
 var LIVE_ON = false;
@@ -1390,21 +1264,17 @@ function toggleRealtime(){
   if (mode === 'rt'){
     store.set('cp_rtmode', 'poll'); rtOn = false;
     $('rtToggle').textContent = '▶️ Bật realtime'; $('pollCtl').style.display = 'inline-block';
-    $('rtModeLabel').innerHTML = 'Realtime đang TẮT — tool quét tin nhắn mới theo chu kỳ <b>' + pollLabel() + '</b>. Tin vẫn chảy xuống Chờ duyệt / Fan Mới sau mỗi lần quét.';
+    $('rtModeLabel').innerHTML = 'Realtime đang TẮT — tool ĐỒNG BỘ tin thật từ Supabase (bảng messages → Chờ duyệt) theo chu kỳ <b>' + pollLabel() + '</b>.';
     I('success','SYS_002','Đã tắt realtime — chuyển sang quét chu kỳ ' + pollLabel(),'Realtime');
   } else {
     store.set('cp_rtmode', 'rt'); rtOn = true;
     $('rtToggle').textContent = '⏸️ Tắt realtime'; $('pollCtl').style.display = 'none';
-    $('rtModeLabel').innerHTML = 'Realtime đang BẬT — tin nhắn mới chảy ngay xuống Chờ duyệt, Fan Mới và Ký ức AI.';
+    $('rtModeLabel').innerHTML = 'Realtime đang BẬT — tool tự đồng bộ tin thật từ Supabase mỗi phút vào Chờ duyệt.';
     I('success','SYS_002','Đã bật realtime — tin mới cập nhật ngay lập tức','Realtime');
   }
 }
-function savePoll(){ store.set('cp_poll', +$('pollEvery').value); pollElapsed = 0; if (store.get('cp_rtmode','rt') === 'poll') $('rtModeLabel').innerHTML = 'Realtime đang TẮT — tool quét tin nhắn mới theo chu kỳ <b>' + pollLabel() + '</b>.'; I('success','SYS_002','Đã set chu kỳ quét: ' + pollLabel(),'Realtime'); }
-function pollScan(){
-  rt('[Quét chu kỳ ' + pollLabel() + '] Đã quét — kiểm tra tin nhắn mới…');
-  if (Math.random() < 0.65) simulateIncoming(true);
-  else { const fans = getFans(); const f = fans[Math.floor(Math.random() * fans.length)]; if (f) rt('@' + f.username + ' vừa nhắn tin — AI đang phân tích'); }
-}
+function savePoll(){ store.set('cp_poll', +$('pollEvery').value); pollElapsed = 0; if (store.get('cp_rtmode','rt') === 'poll') $('rtModeLabel').innerHTML = 'Realtime đang TẮT — tool đồng bộ tin thật từ Supabase theo chu kỳ <b>' + pollLabel() + '</b>.'; I('success','SYS_002','Đã set chu kỳ quét: ' + pollLabel(),'Realtime'); }
+function pollScan(){ if (typeof syncInboxFromSupabase === 'function') syncInboxFromSupabase(); }
 
 /* ----- Panda Sleep Mode ----- */
 function goSleepNow(){ goSleep(false); }
@@ -1421,16 +1291,14 @@ function goSleep(auto){
   I('info','SUP_001','Panda sleep mode — hệ thống vào chế độ ngủ (' + (auto ? 'tự động sau 5 phút không hoạt động' : 'bấm Ngủ ngay') + ') · keep-alive */5 vẫn chạy nền qua Supabase','auto-sleep');
 }
 function wakePanda(){
-  const s = store.get('cp_sleeping', null);
-  const missed = s ? (s.missed || 0) : 0;
   SLEEPING = false; store.del('cp_sleeping');
   try{ localStorage.removeItem('panda_sleep'); }catch(e){}
   $('sleepBanner').style.display = 'none';
   rtOn = store.get('cp_rtmode', 'rt') === 'rt';
   lastAct = Date.now();
-  rt('Đã đánh thức Panda — Đồng bộ ' + missed + ' tin nhắn mới');
-  I('success','SUP_001','Đã đánh thức Panda — Đồng bộ ' + missed + ' tin nhắn mới trong lúc ngủ','Đánh thức');
-  for (let k = 0; k < Math.min(3, missed); k++) simulateIncoming(true);
+  rt('Đã đánh thức Panda — đang đồng bộ tin thật từ Supabase…');
+  I('success','SUP_001','Đã đánh thức Panda — đồng bộ tin thật từ Supabase (không còn số tin "bỏ lỡ" bịa)','Đánh thức');
+  if (typeof pollScan === 'function') pollScan();
 }
 window.addEventListener('beforeunload', () => { try{ localStorage.setItem('panda_sleep', String(Date.now())); const q = store.get('cp_queue', []); q.forEach(j => { if (j.status === 'processing') j.status = 'pending'; }); store.set('cp_queue', q); }catch(e){} });
 ['click','keydown','pointerdown'].forEach(ev => document.addEventListener(ev, () => { lastAct = Date.now(); }, true));
@@ -1438,7 +1306,7 @@ window.addEventListener('beforeunload', () => { try{ localStorage.setItem('panda
 /* ----- Chuc nang Live ----- */
 function openLiveModal(){ renderLiveState(); $('liveModal').classList.add('open'); }
 function closeLiveModal(){ $('liveModal').classList.remove('open'); }
-function renderLiveState(){ const lv = store.get('cp_live', {}); $('liveState').innerHTML = 'Trạng thái: ' + (LIVE_ON ? '<b style="color:#c62828">🔴 ĐANG LIVE</b> — không rep, đang quét &amp; học tin trong ' + (lv.days || 30) + ' ngày gần nhất.' : 'đang TẮT.'); }
+function renderLiveState(){ const lv = store.get('cp_live', {}); $('liveState').innerHTML = 'Trạng thái: ' + (LIVE_ON ? '<b style="color:#c62828">🔴 ĐANG LIVE</b> — tool đang KHÓA gửi/duyệt tin (chế độ chỉ đọc khi đang live).' : 'đang TẮT.'); }
 function saveLive(on){
   LIVE_ON = on;
   const cfg = { on, scan: $('lv_scan').checked, days: +$('lv_days').value, norep: true };
@@ -1446,19 +1314,11 @@ function saveLive(on){
   $('liveBadge').style.display = on ? 'inline-block' : 'none';
   $('liveBtn').textContent = on ? '🔴 Đang Live — Tắt?' : '🔴 Bật chức năng Live';
   renderLiveState();
-  I('success','SYS_001', on ? 'Đã BẬT chức năng Live: dừng rep tin nhắn, quét realtime & đọc tin ' + cfg.days + ' ngày gần nhất để học' : 'Đã TẮT chức năng Live — tool rep tin nhắn bình thường','Live mode');
-  if (on) rt('🔴 LIVE: bắt đầu quét tin đến để học (không rep) — khoảng ' + cfg.days + ' ngày');
+  I('success','SYS_001', on ? 'Đã BẬT chức năng Live: tool khóa gửi/duyệt tin (chỉ đọc) trong lúc live' : 'Đã TẮT chức năng Live — tool dùng bình thường','Live mode');
+  if (on) rt('🔴 LIVE: tool đang khóa gửi tin — chế độ chỉ đọc khi đang live');
   closeLiveModal();
 }
-function liveLearnTick(){
-  const db = getDB();
-  db.ai.learned = (db.ai.learned || 0) + 3;
-  if (Math.random() < 0.3) appendMemories(db, 1);
-  db.ai.updated = fmtDT(new Date()); saveDB(db); renderMemory();
-  const fans = getFans(); const f = fans[Math.floor(Math.random() * fans.length)];
-  if (f) rt('🔴 LIVE · Đọc tin @' + f.username + ' để học (không rep)');
-}
-
+/* v3.6: da xoa liveLearnTick (hoc gia khi Live). */
 /* ----- Ket noi: Lay link / Kiem tra dang nhap / Supabase / Providers ----- */
 function markAuthFlow(){ AUTH_FLOW = true; }
 function getAuthLink(){
@@ -1471,13 +1331,20 @@ function copyAuthLink(){ const t = $('authLinkText'); t.select(); try{ navigator
 function checkLogin(){
   const tok = store.get('panda_real_token_v262', null);
   if (tok && (tok.expires_at || 0) > Date.now()){ I('success','LIC_101','Kiểm tra đăng nhập: Token đang hoạt động ✅','Kiểm tra đăng nhập'); return; }
-  if (AUTH_FLOW){ I('success','LIC_101','Kiểm tra đăng nhập: đã phát hiện xác nhận đăng nhập từ điện thoại — đang lấy token…','Kiểm tra đăng nhập'); qrSuccess(); }
+  if (AUTH_FLOW){ I('error','LIC_101','Đã mở link/QR nhưng CHƯA có code TikTok trả về trong trình duyệt này — đăng nhập phải hoàn tất tại đây để TikTok trả code về tool.','Kiểm tra đăng nhập'); }
   else I('error','LIC_101','Chưa phát hiện đăng nhập — hãy quét QR hoặc mở link đăng nhập trên điện thoại trước','Kiểm tra đăng nhập');
 }
-function checkSupa(){
-  const cfg = sbCfg();
-  if (cfg && cfg.url && cfg.key){ $('supaState2').textContent = '✅ supa_cfg đã có — đồng bộ đang bật (SUP_001).'; I('success','SUP_001','Kết Nối Tài Khoản — Supabase: supa_cfg hợp lệ, đồng bộ fans/queue/logs đang bật','Supabase'); }
-  else { $('supaState2').textContent = '⚠️ Chưa có supa_cfg — nhập Supabase URL + Anon Key ở Client Config rồi Save.'; I('error','SUP_001','Chưa cấu hình Supabase — tool đang chạy local (localStorage)','Supabase'); }
+async function checkSupa(){
+  const base = (typeof supaBase === 'function') ? supaBase() : null;
+  const cfg = base || sbCfg();
+  if (cfg && cfg.url && cfg.key){
+    try{
+      const r = await fetch(cfg.url.replace(/\/$/,'') + '/rest/v1/logs?select=id&limit=1', { headers:{ apikey: cfg.key, Authorization: 'Bearer ' + cfg.key } });
+      if (r.ok){ $('supaState2').textContent = '✅ Supabase PHẢN HỒI THẬT (HTTP ' + r.status + ') — đồng bộ đang bật (SUP_001).'; I('success','SUP_001','Check Supabase THẬT: REST trả HTTP ' + r.status + ' — kết nối sống, đồng bộ fans/queue/logs đang bật','Supabase'); }
+      else { $('supaState2').textContent = '⚠️ Supabase trả HTTP ' + r.status + ' — kiểm tra lại URL / Anon Key.'; I('error','SUP_001','Check Supabase: REST trả HTTP ' + r.status,'Supabase'); }
+    }catch(e){ $('supaState2').textContent = '❌ Không gọi được Supabase: ' + e.message; I('error','SUP_001','Check Supabase: lỗi kết nối — ' + e.message,'Supabase'); }
+  }
+  else { $('supaState2').textContent = '⚠️ Chưa có cấu hình Supabase — nhập URL + Anon Key trong Setting → Client Config rồi Save.'; I('error','SUP_001','Chưa cấu hình Supabase — tool đang chạy local (localStorage)','Supabase'); }
 }
 const PROVIDER_SEGS = ['VIP','Ưu tiên','Fan mới','Fan nhí','Fan thường','Tất cả (dự phòng)'];
 function renderProviders(){
@@ -1495,34 +1362,23 @@ function saveProviders(){
 }
 
 /* ----- Fan Moi: quet theo 3 tieu chi + them vao bang (Chua phan loai) ----- */
-const FOLLOW_POOL = [
-  { username:'seo.jun.98', name:'Seo Jun', country:'KR', follow:'Đã follow — họ chưa chấp nhận' },
-  { username:'yuna.park', name:'Yuna Park', country:'KR', follow:'Đã follow — họ đã chấp nhận' },
-  { username:'duc.manh.99', name:'Đức Mạnh', follow:'Vừa nhắn tin lần đầu' }
-];
+/* v3.6: da xoa FOLLOW_POOL/REAL_USERS — quet fan moi gio tinh tren BANG FAN THAT */
 function scanNewFans(){
   const fans = getFans();
-  const cands = [];
-  REAL_USERS.forEach(u => {
-    if (fans.some(f => f.username === u.username)) return;
-    const convo = u.convo || [];
-    const msgs7d = u.daysAgo <= 7 ? convo.length : 0;
-    const lastFrom = convo.length ? convo[convo.length - 1][0] : 'fan';
-    if (u.daysAgo <= 7 && msgs7d > 0 && msgs7d < 5) cands.push({ username:u.username, name:u.name, reason:'Hội thoại mới: ' + msgs7d + ' tin trong 7 ngày gần nhất (ít hơn 5 tin)' });
-    else if (lastFrom === 'me') cands.push({ username:u.username, name:u.name, reason:'Bạn đã gửi tin mà họ chưa trả lời' });
-  });
-  FOLLOW_POOL.forEach(pl => { if (!fans.some(f => f.username === pl.username)) cands.push({ username:pl.username, name:pl.name, country:pl.country, reason:pl.follow }); });
-  NEW_POOL.forEach(pl => { if (!fans.some(f => f.username === pl.username) && !cands.some(c => c.username === pl.username)) cands.push({ username:pl.username, name:pl.name, country:pl.country, reason:'Vừa nhắn tin lần đầu' }); });
+  const cands = fans.filter(f => f.cat === 'Chưa phân loại' || (typeof f.msgs === 'number' && f.msgs > 0 && f.msgs < 5 && (f.lastDays ?? 99) <= 7))
+    .map(f => ({ username: f.username, name: f.name, country: f.country, reason: f.cat === 'Chưa phân loại' ? 'Đang ở danh mục "Chưa phân loại" — cần phân loại' : 'Hội thoại mới: ' + f.msgs + ' tin trong 7 ngày gần nhất (ít hơn 5 tin)' }));
   window.__scanCands = cands.slice(0, 6);
-  if (!window.__scanCands.length){ $('newFanList').innerHTML = '<p class="muted">Không phát hiện fan mới nào theo 3 tiêu chí quét.</p>'; I('success','SYS_002','Quét fan mới: không phát hiện thêm','Quét fan mới'); return; }
-  $('newFanList').innerHTML = window.__scanCands.map(c =>
-    '<div class="whoitem"><div class="avatar" style="background:' + colorOf(c.username) + ';width:36px;height:36px;font-size:12px">' + initialsOf(c.name) + '</div>' +
+  if (!window.__scanCands.length){ $('newFanList').innerHTML = '<p class="muted">Không phát hiện fan nào cần chú ý trong bảng fan hiện có. Fan mới thật sẽ xuất hiện khi có tin nhắn thật đồng bộ từ Supabase.</p>'; I('success','SYS_002','Quét fan mới (trên bảng fan thật): không phát hiện thêm','Quét fan mới'); return; }
+  $('newFanList').innerHTML = window.__scanCands.map(c => {
+    const idx = getFans().findIndex(f => f.username === c.username);
+    return '<div class="whoitem"><div class="avatar" style="background:' + colorOf(c.username) + ';width:36px;height:36px;font-size:12px">' + initialsOf(c.name) + '</div>' +
     '<div style="flex:1"><b>@' + c.username + '</b> · ' + c.name + '<div class="muted">' + c.reason + '</div></div>' +
-    '<button class="btn small" onclick="addNewFan(\'' + c.username + '\')">➕ Thêm vào bảng fan</button></div>').join('');
-  I('success','SYS_002','Quét fan mới: phát hiện ' + window.__scanCands.length + ' người (ít hơn 5 tin/7 ngày · gửi chưa rep · follow)','Quét fan mới');
+    '<button class="btn small" onclick="openFanModal(' + idx + ')">✏️ Phân loại</button></div>';
+  }).join('');
+  I('success','SYS_002','Quét fan mới (trên bảng fan thật): ' + window.__scanCands.length + ' fan cần chú ý','Quét fan mới');
 }
 function addNewFan(u, silent){
-  const c = (window.__scanCands || []).find(x => x.username === u) || NEW_POOL.find(x => x.username === u) || FOLLOW_POOL.find(x => x.username === u) || { username:u, name:u, reason:'Tự thêm khi nhắn tin' };
+  const c = (window.__scanCands || []).find(x => x.username === u) || { username:u, name:u, reason:'Từ tin nhắn thật đồng bộ về' };
   const db = getDB();
   if (db.fans.some(f => f.username === u)) return;
   db.fans.push({ username:u, name:c.name || u, call:'em', intimacy:3, time:'Tối', style:'Dịu dàng', country:c.country || 'VN', cat:'Chưa phân loại', vip:false, priority:'thấp', note:c.reason || '', lastDays:0, msgs:1 });
@@ -1575,44 +1431,8 @@ function renderLearnList(){
 function toggleLearnSel(u, on){ const s = learnSelSet(); if (on) s.add(u); else s.delete(u); store.set('cp_learn_sel', [...s]); }
 function learnSelectRecent(){ const top = [...getFans()].sort((a, b) => (a.lastDays ?? 99) - (b.lastDays ?? 99)).slice(0, 5).map(f => f.username); store.set('cp_learn_sel', top); renderLearnList(); I('success','AI_003','Đã chọn 5 fan nhắn gần nhất để học','Đào tạo AI'); }
 function learnClearSel(){ store.set('cp_learn_sel', []); renderLearnList(); }
-function learnSelected(){
-  const sel = [...learnSelSet()];
-  const fans = getFans().filter(f => sel.includes(f.username));
-  if (!fans.length){ I('error','AI_003','Chưa chọn fan nào — tick chọn fan trong danh sách phía trên','Đào tạo AI'); return; }
-  let pr = 0; $('trainBar').style.width = '0%';
-  $('trainState').textContent = 'Đang phân tích lịch sử của ' + fans.length + ' fan đã chọn…';
-  const iv = setInterval(() => {
-    pr = Math.min(100, pr + 15); $('trainBar').style.width = pr + '%';
-    if (pr >= 100){
-      clearInterval(iv);
-      const db = getDB();
-      const gained = fans.reduce((s, f) => s + (f.msgs || 30), 0);
-      db.ai.learned = (db.ai.learned || 0) + gained;
-      db.ai.percent = Math.min(95, 20 + Math.floor(db.ai.learned / 25));
-      db.ai.updated = fmtDT(new Date());
-      fans.forEach(f => {
-        const df = db.fans.find(x => x.username === f.username);
-        if (df && (df.msgs || 0) >= 150 && df.intimacy < 10){ df.intimacy += 1; df.priority = priorOf(df.intimacy); }
-        db.memories.push({ content:'Đã phân tích sâu @' + f.username + ': xưng hô "' + f.call + '", style ' + f.style + ', thân mật ' + f.intimacy + '/10 — ' + (f.note || ''), emotion:'Thân mật', importance:'high', times:1 });
-      });
-      appendMemories(db, 1); saveDB(db);
-      renderMemory(); renderFans(); renderLearnList(); renderStories();
-      $('trainState').textContent = 'Đã học xong lịch sử của ' + fans.length + ' fan.';
-      I('success','AI_003','Học theo fan đã chọn: ' + fans.map(f => '@' + f.username).join(', ') + ' · +' + gained.toLocaleString('vi-VN') + ' tin · AI hiểu ' + db.ai.percent + '% · thân mật đã được AI đánh giá lại','Đào tạo AI');
-    }
-  }, 150);
-}
-function relearnAI(){
-  const db = getDB();
-  const before = db.ai.percent || 0;
-  db.ai.windowDays = (db.ai.windowDays || 30) + 7;
-  db.ai.learned = (db.ai.learned || 0) + 7 * 41;
-  db.ai.percent = Math.min(95, 20 + Math.floor(db.ai.learned / 25));
-  db.ai.updated = fmtDT(new Date());
-  appendMemories(db, 2); saveDB(db); renderMemory(); renderLearnList();
-  I('success','AI_003','Học lại: xem lại & so sánh với những gì đã hiểu (' + before + '%) + học thêm 7 ngày gần nhất → tổng khoảng hiểu biết ' + db.ai.windowDays + ' ngày · AI hiểu ' + db.ai.percent + '%','Đào tạo AI');
-  rt('Học lại hoàn tất — khoảng hiểu biết mở rộng lên ' + db.ai.windowDays + ' ngày');
-}
+/* v3.6: da xoa hoc-theo-fan mo phong (thanh % chay gia). */
+/* v3.6: da xoa hoc-lai mo phong (+7 ngay gia). */
 const PACKS = [
   { id:'tho', name:'✍️ Thơ & văn vở', desc:'Câu thơ, văn mẫu nhẹ nhàng để rep có hồn', tmpl:{ name:'Văn vở (gói thơ)', text:'{ten} à, gió chiều nay thơm mùi hoa sữa, thấy {xungHo} vào live là Panda vui nguyên ngày 🍀' } },
   { id:'choichu', name:'🔤 Chơi chữ', desc:'Nói lái, pun theo tên fan, đố chữ vui', tmpl:{ name:'Chơi chữ', text:'{ten} ơi, tên {xungHo} nghe là thấy thương rồi — thương không hết nên Panda live tiếp nè 😆' } },
@@ -1638,34 +1458,14 @@ function togglePack(id, onoff){
   } else I('success','AI_003','Đã tắt gói ' + pk.name,'Học sáng tạo');
   renderPacks();
 }
-function genSuggestions(fan, msg){
-  const m = (msg || '').toLowerCase();
-  let pool;
-  if (m.includes('mấy giờ') || m.includes('live'))
-    pool = ['Tối nay 20h {xungHo} nhớ vào nha {ten} 🐼', '{ten} ơi 20h nè, Panda chờ {xungHo} đó — có bài mới luôn', '20h tối nay nha {xungHo}, vào sớm Panda chào {ten} đầu live nè'];
-  else if (m.includes('sticker'))
-    pool = ['Hihi sticker gấu dễ thương quá {xungHo} 🧸', '{ten} gửi sticker cưng xỉu, Panda thích lắm luôn', 'Cưng quá {xungHo} ơi, tối nay vào live Panda gửi lại sticker cho {ten} nè'];
-  else if (m.includes('khỏe') || m.includes('mệt') || m.includes('buồn'))
-    pool = ['{xungHo} ơi, khỏe không? Nhớ giữ sức khỏe nha {ten} 💚', 'Nghe {xungHo} vậy Panda lo nè, nghỉ ngơi nhiều vào nha {ten}', '{ten} đừng buồn nữa, tối nay vào live Panda nhảy cho {xungHo} vui nè 🐼'];
-  else if (m.includes('bạn') || m.includes('rủ') || m.includes('share'))
-    pool = ['Yêu quá, cảm ơn {ten} đã rủ bạn vào xem chung 🐼 tối nay 20h nha {xungHo}', '{xungHo} tuyệt vời nhất luôn, hẹn {ten} với bạn tối nay 20h nè', 'Cảm ơn {ten} nhiều lắm, tối nay Panda nhảy bài mới cho {xungHo} xem'];
-  else
-    pool = ['Cảm ơn {ten} nè 🐼 tối nay 20h CYAN live, {xungHo} vào chơi nha', 'Hihi {xungHo} dễ thương quá, Panda nhớ {ten} lắm', '{ten} ơi Panda rep {xungHo} liền nè — tối nay có bài mới đó'];
-  const packs = store.get('cp_packs', {});
-  if ((packs.troll || packs.thathinh) && fan && fan.style === 'Hài hước'){
-    const pk = packs.troll ? PACKS.find(x => x.id === 'troll') : PACKS.find(x => x.id === 'thathinh');
-    pool[2] = pk.tmpl.text;
-  }
-  return pool.map(t => personalize(t, fan));
-}
-
+/* v3.6: da xoa genSuggestions mau #2 — goi y chi sinh bang API AI that. */
 /* ----- Tai lieu: bang trang thai ----- */
 function renderDocs(){
   const docs = getDocs();
   $('docList').innerHTML = docs.length ?
     '<table><thead><tr><th>Tài liệu</th><th>Loại</th><th>Trạng thái</th><th>Thêm lúc</th><th></th></tr></thead><tbody>' +
     docs.map((d, i) => '<tr><td><b>' + d.title + '</b><div class="muted">' + d.content + '</div></td><td>' + (d.type || 'Tài liệu hướng dẫn') + '</td>' +
-      '<td><span class="badge green">Đã phân tích</span> <span class="badge blue">Đã học</span> <span class="badge gray">Đã lưu DB</span></td><td>' + (d.when || '—') + '</td>' +
+      '<td><span class="badge gray">Đã lưu DB</span></td><td>' + (d.when || '—') + '</td>' +
       '<td><button class="btn small danger" onclick="delDoc(' + i + ')">✖</button></td></tr>').join('') + '</tbody></table>'
     : '<p class="muted">Chưa có tài liệu nào.</p>';
 }
@@ -1673,7 +1473,7 @@ function addDoc(){
   const t = $('nd_title').value.trim(), c = $('nd_content').value.trim(), ty = $('nd_type')?.value || 'Tài liệu hướng dẫn';
   if (!t || !c){ I('error','MEM_001','Chưa nhập tiêu đề hoặc nội dung tài liệu','Tài liệu AI'); return; }
   const docs = getDocs(); docs.push({ title:t, content:c, type:ty, when: fmtDT(new Date()) }); store.set('panda_docs_db_v261', docs); renderDocs();
-  I('success','MEM_001','Đã thêm tài liệu "' + t + '" (' + ty + ') — trạng thái: Đã phân tích · Đã học · Đã lưu DB panda_docs_db_v261','Tài liệu AI');
+  I('success','MEM_001','Đã thêm tài liệu "' + t + '" (' + ty + ') — đã lưu vào panda_docs_db_v261 (AI thật dùng làm ngữ cảnh khi sinh gợi ý)','Tài liệu AI');
   $('nd_title').value = ''; $('nd_content').value = '';
 }
 
@@ -1681,11 +1481,9 @@ function addDoc(){
 setInterval(() => {
   if (SLEEPING){
     const s = store.get('cp_sleeping', null);
-    if (s && Math.random() < 0.5){ s.missed = (s.missed || 0) + 1; store.set('cp_sleeping', s); const el = $('sleepMissed'); if (el) el.textContent = s.missed; }
     return;
   }
   if (Date.now() - lastAct > 5 * 60 * 1000){ goSleep(true); return; }
-  if (LIVE_ON){ if (Math.random() < 0.4) liveLearnTick(); return; }
   if (store.get('cp_rtmode', 'rt') === 'poll'){
     pollElapsed += 5;
     const iv = +(store.get('cp_poll', 30));
@@ -1697,15 +1495,11 @@ setInterval(() => {
 (function initV30(){
   const mode = store.get('cp_rtmode', 'rt');
   rtOn = mode === 'rt';
-  if (mode === 'poll'){ $('rtToggle').textContent = '▶️ Bật realtime'; $('pollCtl').style.display = 'inline-block'; $('pollEvery').value = store.get('cp_poll', 30); $('rtModeLabel').innerHTML = 'Realtime đang TẮT — tool quét tin nhắn mới theo chu kỳ <b>' + pollLabel() + '</b>.'; }
+  if (mode === 'poll'){ $('rtToggle').textContent = '▶️ Bật realtime'; $('pollCtl').style.display = 'inline-block'; $('pollEvery').value = store.get('cp_poll', 30); $('rtModeLabel').innerHTML = 'Realtime đang TẮT — tool đồng bộ tin thật từ Supabase theo chu kỳ <b>' + pollLabel() + '</b>.'; }
   const lv = store.get('cp_live', null);
   if (lv && lv.on){ LIVE_ON = true; $('liveBadge').style.display = 'inline-block'; $('liveBtn').textContent = '🔴 Đang Live — Tắt?'; }
-  const sleptAt = +(localStorage.getItem('panda_sleep') || 0);
-  if (sleptAt && Date.now() - sleptAt < 24 * 3600 * 1000){
-    localStorage.removeItem('panda_sleep');
-    const missed = 1 + Math.floor(Math.random() * 3);
-    setTimeout(() => { I('success','SUP_001','Đã đánh thức Panda — Đồng bộ ' + missed + ' tin nhắn mới từ lúc đóng tab','Đánh thức'); rt('Đã đánh thức Panda — Đồng bộ ' + missed + ' tin nhắn mới'); for (let k = 0; k < Math.min(2, missed); k++) simulateIncoming(true); }, 600);
-  }
+  try{ localStorage.removeItem('panda_sleep'); }catch(e){}
+  setTimeout(() => { if (typeof pollScan === 'function') pollScan(); }, 800);
   renderLearnList(); renderPacks(); renderDocs(); renderProviders(); renderPending();
 })();
 </script>
@@ -1888,6 +1682,192 @@ aiReady = function(silent, fan){
   try{ renderProviders(); }catch(e){}
   applyGate();
   I('success','SYS_001','Cyan Panda v3.2 — ⚙️ Setting (AI Multi-Flow + API KEY) & theme Sáng/Tối sẵn sàng','Khởi động v3.2');
+})();
+</script>
+<div class="modal" id="welcomeModal">
+  <div class="box" style="max-width:440px;text-align:center">
+    <img id="wcAvatar" alt="avatar" style="width:96px;height:96px;border-radius:50%;object-fit:cover;margin:6px auto;display:none;border:3px solid #2E7D32">
+    <h2 style="margin-top:8px">🎉 Chào mừng <span id="wcName">bạn</span>!</h2>
+    <div style="font-weight:800;color:#2E7D32;font-size:16px" id="wcUser">@username</div>
+    <p class="muted" id="wcStats" style="margin-top:8px"></p>
+    <p class="muted">Đăng nhập bằng <b>dữ liệu thật từ TikTok</b> — token thật đã lưu, toàn bộ tính năng đã mở khóa.</p>
+    <button class="btn" style="margin-top:10px" onclick="closeWelcome()">🚀 Bắt đầu dùng tool</button>
+  </div>
+</div>
+<script>
+/* ================= v3.5: DANG NHAP TIKTOK THAT qua tiktok-proxy (Supabase) ================= */
+const DEFAULT_SUPA = { url: 'https://zhqujumtnwejaynjfmtd.supabase.co', key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpocXVqdW10bndlamF5bmpmbXRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI3NzQ0MjMsImV4cCI6MjEwODM1MDQyM30.kDpEgq9GCVZnqLaUjn5xaWl_-3HDJzqBSCCWbAwx3Qc' }; /* backend Supabase cua CYAN — anon key la key cong khai, an toan de nhung */
+function supaBase(){ const c = sbCfg(); if (c && c.url && c.key) return c; return DEFAULT_SUPA.url ? DEFAULT_SUPA : null; }
+async function exchangeCode(code){
+  const base = supaBase();
+  if (!base){ I('error','ERR_001','Chưa có cấu hình Supabase (URL + Anon Key) — không đổi được code lấy token thật. Backend Supabase phải thiết lập xong trước.','Đổi token'); return false; }
+  I('success','TOKEN_EXCHANGE','Đang đổi Authorization Code lấy token thật qua tiktok-proxy…','Đổi token');
+  try{
+    const r = await fetch(base.url.replace(/\/$/,'') + '/functions/v1/tiktok-proxy', { method:'POST', headers:{ 'Content-Type':'application/json', apikey: base.key, Authorization: 'Bearer ' + base.key }, body: JSON.stringify({ code }) });
+    const data = await r.json();
+    I(data && data.access_token ? 'success' : 'error','TOKEN_EXCHANGE','TikTok trả về: ' + JSON.stringify(data).slice(0, 900),'TikTok API');
+    if (!data || !data.access_token){ I('error','ERR_001','Đổi token thất bại — TikTok không trả access_token (code có thể đã hết hạn hoặc đã dùng). Hãy đăng nhập lại để lấy code mới.','Đổi token'); return false; }
+    const tok = { access_token: data.access_token, refresh_token: data.refresh_token || '', open_id: data.open_id || '', scope: data.scope || '', expires_in: data.expires_in || 86400, expires_at: Date.now() + (data.expires_in || 86400) * 1000, real: true };
+    store.set('panda_real_token_v262', tok);
+    const u = data.user || {};
+    const acc = { username: u.username || 'cyan.khotinh', display_name: u.display_name || '', avatar_url: u.avatar_large_url || u.avatar_url || '', followers: (typeof u.follower_count === 'number' ? u.follower_count : undefined), following: u.following_count, likes: u.likes_count, videos: u.video_count, bio: u.bio_description || '', open_id: u.open_id || data.open_id || '' };
+    store.set('panda_real_account_v262', acc);
+    sbInsert('accounts', { type:'tiktok_real', username: acc.username, meta: { open_id: acc.open_id, followers: (typeof acc.followers === 'number' ? acc.followers : null) } });
+    renderConnect(); applyGate();
+    if (typeof rt === 'function') rt('Đăng nhập TikTok THẬT thành công — @' + acc.username + ' ✅');
+    showWelcome(acc);
+    return true;
+  }catch(e){ I('error','ERR_001','Không gọi được tiktok-proxy: ' + e.message,'Đổi token'); return false; }
+}
+function showWelcome(acc){
+  const av = $('wcAvatar');
+  if (acc.avatar_url){ av.src = acc.avatar_url; av.style.display = 'block'; } else av.style.display = 'none';
+  $('wcName').textContent = acc.display_name || acc.username;
+  $('wcUser').textContent = '@' + acc.username;
+  const parts = [];
+  if (typeof acc.followers === 'number') parts.push('<b>' + acc.followers.toLocaleString('vi-VN') + '</b> followers');
+  if (typeof acc.videos === 'number') parts.push('<b>' + acc.videos.toLocaleString('vi-VN') + '</b> video');
+  if (typeof acc.likes === 'number') parts.push('<b>' + acc.likes.toLocaleString('vi-VN') + '</b> lượt thích');
+  $('wcStats').innerHTML = parts.length ? parts.join(' · ') : 'Đã lấy token thật từ TikTok.';
+  $('welcomeModal').classList.add('open');
+  I('success','TIK_LOGIN_SUCCESS','Chào mừng ' + (acc.display_name || acc.username) + ' (@' + acc.username + ') — đăng nhập bằng dữ liệu THẬT từ TikTok','Đăng nhập thật');
+}
+function closeWelcome(){ $('welcomeModal').classList.remove('open'); goTab('fans'); }
+/* Bo dang nhap gia: qrSuccess / checkLogin KHONG con tu bia token */
+qrSuccess = function(){
+  closeQr();
+  let code = null; try{ code = sessionStorage.getItem('cp_auth_code'); }catch(e){}
+  if (!code) code = new URLSearchParams(location.search).get('code');
+  if (code){ try{ sessionStorage.removeItem('cp_auth_code'); }catch(e){} exchangeCode(code); return; }
+  I('error','ERR_001','Chưa nhận được mã đăng nhập từ TikTok — nút này KHÔNG tự đăng nhập nữa. Hãy dùng "🔗 Lấy link đăng nhập", mở link và đăng nhập ngay trong trình duyệt này; TikTok trả code về, tool sẽ đổi lấy token + dữ liệu thật.','Đăng nhập thật');
+};
+checkLogin = function(){
+  const t = store.get('panda_real_token_v262', null);
+  if (t && t.real && (t.expires_at || 0) > Date.now()){ I('success','LIC_101','Đã có token THẬT đang hoạt động (đổi từ code TikTok qua tiktok-proxy)','Kiểm tra đăng nhập'); return; }
+  let code = null; try{ code = sessionStorage.getItem('cp_auth_code'); }catch(e){}
+  if (!code) code = new URLSearchParams(location.search).get('code');
+  if (code){ try{ sessionStorage.removeItem('cp_auth_code'); }catch(e){} exchangeCode(code); return; }
+  I('error','LIC_101','Chưa thấy mã đăng nhập TikTok trả về — hãy mở "🔗 Lấy link đăng nhập" và hoàn tất đăng nhập trong trình duyệt này.','Kiểm tra đăng nhập');
+};
+/* Khoi dong v3.5: co code tu callback -> doi token that ngay */
+(function v35Init(){
+  let code = null; try{ code = sessionStorage.getItem('cp_auth_code'); }catch(e){}
+  if (!code) code = new URLSearchParams(location.search).get('code');
+  if (code){ try{ sessionStorage.removeItem('cp_auth_code'); }catch(e){} try{ history.replaceState(null, '', location.pathname); }catch(e){} exchangeCode(code); }
+  I('success','SYS_001','Cyan Panda v3.5 — đăng nhập TikTok THẬT qua tiktok-proxy (không còn token giả)','Khởi động v3.5');
+})();
+</script>
+<script>
+/* ================= v3.6: API THAT — sbGet · AI provider that · dong bo inbox that ================= */
+async function sbGet(table, query){
+  const base = (typeof supaBase === 'function') ? supaBase() : null;
+  const cfg = base || sbCfg();
+  if (!cfg || !cfg.url || !cfg.key) return null;
+  try{
+    const r = await fetch(cfg.url.replace(/\/$/,'') + '/rest/v1/' + table + '?' + query, { headers:{ apikey: cfg.key, Authorization: 'Bearer ' + cfg.key } });
+    if (!r.ok) return null;
+    return await r.json();
+  }catch(e){ return null; }
+}
+function providerFor(fan){
+  const list = store.get('cp_providers', []);
+  const seg = (fan && typeof fanSeg === 'function') ? fanSeg(fan) : 'Tất cả (dự phòng)';
+  const withKey = list.filter(x => x && x.on && (x.key || '').trim());
+  return withKey.find(x => x.seg === seg) || withKey.find(x => x.seg === 'Tất cả (dự phòng)') || null;
+}
+async function callAI(pv, prompt){
+  const key = (pv.key || '').trim(), type = pv.type || '';
+  if (type === 'OpenAI' || type === 'DeepSeek'){
+    const url = type === 'OpenAI' ? 'https://api.openai.com/v1/chat/completions' : 'https://api.deepseek.com/chat/completions';
+    const model = type === 'OpenAI' ? 'gpt-4o-mini' : 'deepseek-chat';
+    const r = await fetch(url, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization: 'Bearer ' + key }, body: JSON.stringify({ model, messages:[{ role:'user', content: prompt }], temperature: 0.8 }) });
+    const d = await r.json();
+    if (!r.ok) throw new Error((d.error && d.error.message) || ('HTTP ' + r.status));
+    return d.choices[0].message.content;
+  }
+  if (type === 'Gemini'){
+    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + encodeURIComponent(key), { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ contents:[{ parts:[{ text: prompt }] }] }) });
+    const d = await r.json();
+    if (!r.ok) throw new Error((d.error && d.error.message) || ('HTTP ' + r.status));
+    return d.candidates[0].content.parts.map(x => x.text || '').join('');
+  }
+  if (type === 'Claude'){
+    const r = await fetch('https://api.anthropic.com/v1/messages', { method:'POST', headers:{ 'Content-Type':'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' }, body: JSON.stringify({ model: 'claude-3-5-haiku-latest', max_tokens: 400, messages:[{ role:'user', content: prompt }] }) });
+    const d = await r.json();
+    if (!r.ok) throw new Error((d.error && d.error.message) || ('HTTP ' + r.status));
+    return d.content.map(x => x.text || '').join('');
+  }
+  throw new Error('Loại AI "' + type + '" chưa có endpoint thật — hãy chọn OpenAI / Gemini / Claude / DeepSeek trong Setting');
+}
+async function genSuggestionsReal(fan, msg){
+  const pv = providerFor(fan);
+  if (!pv) throw new Error('Chưa có provider AI nào có KEY trong Setting (hoặc provider của nhóm fan này chưa có KEY)');
+  const docs = getDocs().map(d => d.title + ': ' + d.content).join('\n').slice(0, 800);
+  const prompt = 'Bạn là trợ lý trả lời tin nhắn fan TikTok cho idol CYAN (nhóm nhảy, live tối 20h). Fan tên ' + (fan.name || fan.username) + ', xưng hô "' + (fan.call || 'em') + '", style ' + (fan.style || 'Dịu dàng') + ', danh mục ' + (fan.cat || 'Fan thường') + '.\nTin nhắn của fan: "' + msg + '"\n' + (docs ? 'Ngữ cảnh từ tài liệu của CYAN:\n' + docs + '\n' : '') + 'Hãy viết ĐÚNG 3 câu trả lời gợi ý khác nhau, mỗi câu 1 dòng, ngắn gọn, thân thiện, tiếng Việt, xưng hô đúng, không đánh số, không giải thích thêm.';
+  const text = await callAI(pv, prompt);
+  const lines = String(text).split('\n').map(x => x.replace(/^\s*(\d+[.)]|[-•])\s*/, '').trim()).filter(Boolean);
+  if (!lines.length) throw new Error('AI không trả về gợi ý nào');
+  I('success','AI_003','AI thật (' + pv.name + ' · ' + pv.type + ') đã sinh gợi ý cho @' + fan.username,'AI thật');
+  return lines.slice(0, 3);
+}
+async function genForPending(id){
+  const p = getPending(); const it = p.find(x => x.id === id); if (!it) return;
+  const fan = getFans().find(f => f.username === it.username) || { username: it.username, name: it.username, call: 'em', style: 'Dịu dàng', cat: 'Chưa phân loại' };
+  I('success','AI_003','Đang gọi API AI thật để sinh gợi ý cho @' + it.username + '…','AI thật');
+  try{
+    it.suggestions = await genSuggestionsReal(fan, it.msg); it.sel = 0;
+    savePending(p); renderPending();
+  }catch(e){ I('error','ERR_001','Không sinh được gợi ý: ' + e.message,'AI thật'); }
+}
+let __syncingInbox = false;
+async function syncInboxFromSupabase(){
+  if (__syncingInbox) return;
+  if (typeof isLogged === 'function' && !isLogged()) return;
+  const base = (typeof supaBase === 'function') ? supaBase() : null;
+  if (!base){ rt('[Đồng bộ] Chưa có cấu hình Supabase — không có nguồn tin thật để đồng bộ.'); return; }
+  __syncingInbox = true;
+  try{
+    const rows = await sbGet('messages', 'select=id,fan_username,content,created_at&direction=eq.in&order=created_at.desc&limit=50');
+    if (!rows){ rt('[Đồng bộ] Không đọc được bảng messages trên Supabase.'); return; }
+    const seen = new Set(store.get('cp_seen_msg', []));
+    const fresh = rows.filter(r => !seen.has('sb' + r.id)).reverse();
+    if (!fresh.length){ rt('[Đồng bộ ' + fmtTime(new Date()) + '] Không có tin mới từ Supabase.'); return; }
+    const p = getPending(); const cms = store.get('cp_messages', []);
+    const newItems = [];
+    for (const r of fresh){
+      seen.add('sb' + r.id);
+      if (!r.fan_username || !r.content) continue;
+      cms.push({ username: r.fan_username, direction: 'in', content: r.content, at: Date.parse(r.created_at) || Date.now(), read: false });
+      if (!getFans().some(f => f.username === r.fan_username)){
+        const db = getDB();
+        db.fans.push({ username: r.fan_username, name: r.fan_username, call: 'em', intimacy: 3, time: 'Tối', style: 'Dịu dàng', country: 'VN', cat: 'Chưa phân loại', vip: false, priority: 'thấp', note: 'Từ tin nhắn thật (Supabase)', lastDays: 0, msgs: 1 });
+        saveDB(db);
+      }
+      const it = { id: 'p' + r.id + '_' + Date.now(), username: r.fan_username, msg: r.content, sel: 0, status: 'pending', editing: false, suggestions: [] };
+      p.unshift(it); newItems.push(it);
+    }
+    store.set('cp_seen_msg', [...seen].slice(-500));
+    store.set('cp_messages', cms.slice(-500));
+    savePending(p); renderPending(); renderFans(); if (typeof renderInbox === 'function') renderInbox();
+    rt('[Đồng bộ] +' + newItems.length + ' tin THẬT từ Supabase → Chờ duyệt 📥');
+    I('success','INBOX_FETCH','Đồng bộ Supabase: +' + newItems.length + ' tin nhắn thật vào Chờ duyệt','Đồng bộ');
+    for (const it of newItems){
+      const fan = getFans().find(f => f.username === it.username);
+      if (fan && typeof aiReady === 'function' && aiReady(true, fan)){
+        try{ it.suggestions = await genSuggestionsReal(fan, it.msg); }catch(e){}
+      }
+    }
+    savePending(p); renderPending();
+  } finally { __syncingInbox = false; }
+}
+/* Don dep du lieu thoi mo phong (ky uc mau / stories mau / cho duyet gia / queue gia) — chay 1 lan */
+(function v36Clean(){
+  if (store.get('cp_v36_clean', null)) return;
+  store.set('cp_v36_clean', 1);
+  const db = store.get('panda_ai_db_v261', null);
+  if (db){ db.memories = []; db.stories = []; store.set('panda_ai_db_v261', db); }
+  store.set('cp_pending', []); store.set('cp_queue', []); store.set('cp_send_status', []); store.set('cp_seen_msg', []);
+  I('success','SYS_001','Cyan Panda v3.6 — đã dọn dữ liệu thời mô phỏng (ký ức mẫu, stories mẫu, hàng chờ & queue giả). Dữ liệu thật (fan, tài liệu, cấu hình) được giữ nguyên.','Khởi động v3.6');
 })();
 </script>
 </body>
