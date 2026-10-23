@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cyan Panda Tool v3.2 — Quản lý Fan TikTok</title>
+<meta name="color-scheme" content="light dark">
+<title>Cyan Panda Tool v3.3 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -84,8 +85,9 @@
   .story{border:1px solid #E8F5E9;border-radius:16px;padding:13px 15px;margin-bottom:10px;background:#fff}
   .tmpl{border:1px solid #E8F5E9;border-radius:14px;padding:11px 13px;margin-bottom:8px;background:#fff;font-size:13.5px}
   .tmpl.sel{border-color:#2E7D32;background:#F1F8E9}
-  :root{--bg:#F9FDF9;--card:#fff;--ink:#1B2A1C;--line:#C8E6C9;--soft:#E8F5E9;--field:#fff;--mut:#5f7160;--head:#1B5E20}
-  html[data-theme="dark"]{--bg:#101613;--card:#1B241E;--ink:#E6F2E7;--line:#2E4A34;--soft:#223528;--field:#141B16;--mut:#9DB8A2;--head:#A5D6A7}
+  :root{color-scheme:light;--bg:#F9FDF9;--card:#fff;--ink:#1B2A1C;--line:#C8E6C9;--soft:#E8F5E9;--field:#fff;--mut:#5f7160;--head:#1B5E20}
+  html[data-theme="dark"]{color-scheme:dark;--bg:#101613;--card:#1B241E;--ink:#E6F2E7;--line:#2E4A34;--soft:#223528;--field:#141B16;--mut:#9DB8A2;--head:#A5D6A7}
+  html{background:var(--bg)}
   body{background:var(--bg);color:var(--ink)}
   .card{background:var(--card);border-color:var(--line);color:var(--ink)}
   input,select,textarea{background:var(--field);color:var(--ink);border-color:var(--line)}
@@ -129,9 +131,9 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.2 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.3 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.3</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Fix theme: khai báo color-scheme để trình duyệt (Cốc Cốc/Chrome) ngừng ép tối tự động lên theme Sáng — trước đây cả 2 theme đều bị ép thành tối nên nhìn giống nhau; nút theme giờ hiện đúng trạng thái đang dùng (☀️ Sáng / 🌙 Tối).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.2</b><div class="muted">24/10/2026 — Thêm nút ⚙️ Setting (chỉ hiện sau đăng nhập): chuyển AI Multi-Flow 6 providers vào Setting, mỗi provider có ô API KEY + chọn loại AI + bật/tắt theo nhóm · mọi chức năng AI kiểm tra KEY trong Setting — chưa có KEY thì báo "cần thêm KEY trong Setting" (theo nhóm fan, có provider dự phòng) · thêm theme Sáng/Tối (nút 🌙 ở header, lưu lựa chọn).</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
@@ -141,10 +143,10 @@
         <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.2 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.3 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
-    <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">🌙 Tối</button>
+    <button class="btn ghost" id="btnTheme" onclick="toggleTheme()">☀️ Sáng</button>
     <button class="btn" id="btnSettings" style="display:none" onclick="openSettings()">⚙️ Setting</button>
     <button class="btn ghost" onclick="openDeploy()">📦 Hướng dẫn Deploy 1 lần</button>
   </header>
@@ -529,7 +531,7 @@
   </section>
 
   <footer class="muted" style="text-align:center;margin-top:26px;line-height:1.9">
-    Cyan Panda Tool v3.0 · Build <span id="buildTime2">—</span><br>
+    Cyan Panda Tool v3.3 · Build <span id="buildTime2">—</span><br>
     <a href="#" onclick="return false" style="color:#2E7D32">Privacy</a> · <a href="#" onclick="return false" style="color:#2E7D32">Terms</a> · © 2026 Cyan Panda<br>
     Verified bUQOGRMp7lPCfbDy3jV0mn5iTOaNM7Wy<br>
     OFFICIAL DOMAIN https://nameerrorcantnotfind.github.io/cyan-pandatool/
@@ -587,7 +589,7 @@
     </div>
     <p class="muted">Up GitHub 1 lần là chạy. FE đóng vẫn làm việc vì queue nằm trong Supabase + Edge Function chạy nền theo pg_cron.</p>
     <h3>1️⃣ GitHub Pages</h3>
-    <pre>git add . &amp;&amp; git commit -m "Cyan Panda Tool v3.0" &amp;&amp; git push
+    <pre>git add . &amp;&amp; git commit -m "Cyan Panda Tool v3.3" &amp;&amp; git push
 # Repo nameerrorcantnotfind/cyan-pandatool → Settings → Pages → Deploy from branch (main / root)
 # Site: https://nameerrorcantnotfind.github.io/cyan-pandatool/ (index.html + callback.html)</pre>
     <h3>2️⃣ Supabase — Tạo bảng</h3>
@@ -1829,7 +1831,7 @@ function gateLogout(){ disconnectTikTok(); applyGate(); goTab('connect'); }
 function setTheme(t){
   document.documentElement.dataset.theme = t;
   store.set('cp_theme', t);
-  const b = $('btnTheme'); if (b) b.textContent = t === 'dark' ? '☀️ Sáng' : '🌙 Tối';
+  const b = $('btnTheme'); if (b) b.textContent = t === 'dark' ? '🌙 Tối' : '☀️ Sáng';
   const ts = $('themeState'); if (ts) ts.textContent = 'Đang dùng theme ' + (t === 'dark' ? 'Tối 🌙' : 'Sáng ☀️');
 }
 function toggleTheme(){ setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'); }
