@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cyan Panda Tool v3.0 — Quản lý Fan TikTok</title>
+<title>Cyan Panda Tool v3.1 — Quản lý Fan TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -102,19 +102,19 @@
     <div style="flex:1;min-width:240px">
       <div style="font-size:24px;font-weight:800;color:#1B5E20;display:flex;gap:10px;align-items:center;flex-wrap:wrap">Cyan Panda Tool
         <span style="position:relative;display:inline-block">
-          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.0 ▾</button>
+          <button class="btn small ghost" id="verBtn" onclick="toggleVerMenu(event)" style="font-weight:800;color:#2E7D32;font-size:14px">v3.1 ▾</button>
           <div id="verMenu" style="display:none;position:absolute;top:38px;left:0;z-index:70;background:#fff;border:1px solid #C8E6C9;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.2);padding:6px 0;width:360px;max-width:86vw;font-size:13px;font-weight:400;color:#1B2A1C;text-align:left;max-height:330px;overflow-y:auto">
-            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b> <span class="badge green">Current</span><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
+            <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.1</b> <span class="badge green">Current</span><div class="muted">24/10/2026 — Cổng đăng nhập TikTok: chưa đăng nhập thì KHÓA toàn bộ dữ liệu &amp; tính năng (chỉ mở tab Kết Nối) · bỏ toàn bộ data mẫu — tool khởi đầu trống, dữ liệu chỉ đến từ tài khoản thật · AI bị khóa cho đến khi đăng nhập + lưu đủ cấu hình Client Key · thêm nút Đăng xuất trên header.</div></div><div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v3.0</b><div class="muted">23/10/2026 — Gộp Fan Mới vào bảng Fan · lọc fan theo tin nhắn gần nhất · Log Realtime lên đầu + lọc danh mục/thời gian + quét chu kỳ khi tắt · Panda Sleep Mode · nút Live (học khi live, không rep) · Đào tạo AI chọn fan + học lại +7 ngày + học văn vở/troll/thả thính · QR vẽ sẵn trong file + Lấy link/Kiểm tra đăng nhập · header gọn, changelog nằm trong menu phiên bản này.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.9</b><div class="muted">Chờ duyệt AI sinh 3 gợi ý + Duyệt/Sửa/Từ chối + Hủy trong 10s · 5 danh mục đúng màu gốc · tab Kết Nối QR + Client Config.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.8</b><div class="muted">Gộp đủ 5 tab chính + 2 tab phụ của v2.6.1: lọc fan đa chiều, VIP/Ưu tiên, modal fan khóa username, preset gửi, Memory DB, Câu chuyện, tài liệu AI.</div></div>
             <div style="padding:9px 14px;border-bottom:1px dashed #E8F5E9"><b>v2.7</b><div class="muted">Bản dựng lại sạch từ bản gốc compiled: 5 tab + Deploy modal full BE (schema + 4 Edge Functions + pg_cron), bỏ chặn khi chuyển tab, fix non_sandbox_target.</div></div>
             <div style="padding:9px 14px"><b>v2.6.1 (gốc)</b><div class="muted">FIX WHO bulk selector + AUTO AI fetch 30d + DB persist + TikTok lock + remove tab toast.</div></div>
           </div>
         </span>
-        <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span>
+        <span id="lockBadge" class="badge red">🔒 Cần đăng nhập TikTok API để lấy data thật</span> <span id="gateChip" class="badge gray" style="display:none"></span> <button class="btn small" id="btnLogout" style="display:none" onclick="gateLogout()">🚪 Đăng xuất</button>
         <span id="liveBadge" class="badge red" style="display:none">🔴 ĐANG LIVE — chỉ học, không rep</span>
       </div>
-      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.0 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
+      <div class="muted">Build <span id="buildTime">—</span> · Bấm vào số phiên bản <b>v3.1 ▾</b> để xem ghi chú cập nhật của từng bản cũ – mới.</div>
     </div>
     <button class="btn" id="liveBtn" onclick="openLiveModal()">🔴 Bật chức năng Live</button>
     <button class="btn ghost" onclick="openDeploy()">📦 Hướng dẫn Deploy 1 lần</button>
@@ -133,7 +133,8 @@
   </nav>
 
   <!-- ===== TAB 1: QUẢN LÝ FAN ===== -->
-  <section id="tab-fans" class="tabpage active">
+  <div id="lockBanner" class="card" style="display:none;align-items:center;gap:12px;border-color:#EF9A9A;background:#FFF5F5;margin-bottom:14px"><span style="font-size:26px">🔒</span><div style="flex:1"><b>Tool đang khóa</b> — dữ liệu fan, inbox &amp; AI chỉ hiển thị <b>sau khi đăng nhập TikTok</b>. Tool khởi đầu trống: không còn data mẫu, dữ liệu đến từ tài khoản thật của bạn.</div><button class="btn" onclick="goTab('connect')">🔗 Sang Kết Nối — đăng nhập</button></div>
+  <section id="tab-fans" class="tabpage">
     <div class="card" style="margin-bottom:16px">
       <h2>🎯 WHO — Chọn ai nhận tin hàng loạt</h2>
       <p class="muted">Panel trái: tick chọn fan (thấy rõ avatar · tên · badge · xưng hô · quốc gia). Panel phải: xem trước tin cá nhân hóa cho người đang chọn. Đang chọn: <b id="whoCount" style="color:#2E7D32">0 người</b></p>
@@ -646,7 +647,7 @@ const SEED_SITUATIONS = [
 function getDB(){
   let db = store.get('panda_ai_db_v261', null);
   if (!db){
-    db = { fans: SEED_FANS, memories: [], stories: SEED_STORIES, situations: SEED_SITUATIONS,
+    db = { fans: [], memories: [], stories: [], situations: [],
            ai: { learned:0, percent:0, updated:null, dailyLearn:false, aiActive:60, activeTemplate:0 } };
     const old = store.get('cp_fans', null);
     if (old && old.length) db.fans = old.map(f => ({ ...f, country: f.country || 'VN', cat: (f.cat === 'VIP' || f.cat === 'Ưu tiên') ? 'Fan thường' : (f.cat || 'Fan thường'), style: f.style || 'Dịu dàng', vip: f.cat === 'VIP', intimacy: f.intimacy > 10 ? Math.round(f.intimacy / 10) : f.intimacy, priority: priorOf(f.intimacy > 10 ? Math.round(f.intimacy / 10) : f.intimacy) }));
@@ -1235,18 +1236,15 @@ $('qrModal').addEventListener('click', e => { if (e.target === $('qrModal')) clo
   if (sb){ $('sb_url').value = sb.url; $('sb_key').value = sb.key; $('sbState').textContent = '✅ Đã có cấu hình Supabase (supa_cfg) — đồng bộ đang bật.'; }
   const ccfg = store.get('cp_client_cfg', null);
   if (ccfg && ccfg.redirect_uri) $('cc_redirect').value = ccfg.redirect_uri;
-  $('rtLog').innerHTML =
-    '<div><span class="lt">🍀 22:12</span> @minhanh.2004 đã gửi tin nhắn - AI rep tự động</div>' +
-    '<div><span class="lt">🍀 22:10</span> @bao.nguyen đã gửi sticker - phân tích sticker</div>' +
-    '<div><span class="lt">🍀 22:08</span> @linhchi.official Chờ duyệt - VIP ưu tiên</div>' +
-    '<div><span class="lt">🍀 22:05</span> Hệ thống vào chế độ ngủ - Panda 💤</div>';
+  $('rtLog').innerHTML = '';
   rt('Panda khởi động xong — queue & ký ức đã nạp từ panda_ai_db_v261 💾');
   const code = new URLSearchParams(location.search).get('code');
   if (code){ const data = { access_token:'act.' + Math.random().toString(36).slice(2, 26), open_id:'oid_' + Math.random().toString(36).slice(2, 14), expires_in:604800, scope:'user.info.basic,user.info.stats,video.list', expires_at: Date.now() + 604800 * 1000 }; store.set('panda_real_token_v262', data); store.set('panda_real_account_v262', { username:'cyan.panda', followers: 12000 + Math.floor(Math.random() * 900) }); renderConnect(); goTab('connect'); I('success','TIK_LOGIN_SUCCESS','Đã nhận code từ URL callback — Token đang hoạt động, đã lưu panda_real_token_v262','Callback'); }
-  I('success','SYS_001','Khởi động Cyan Panda v3.0 — Build ' + bt,'Khởi động');
+  I('success','SYS_001','Khởi động Cyan Panda v3.1 — Build ' + bt,'Khởi động');
   /* Realtime mô phỏng: fan nhắn đến, fan lạ tự thêm nếu bật auto-add */
   setInterval(() => {
     if (!rtOn) return;
+    if (!store.get('panda_real_token_v262', null)) return;
     const fans = getFans(); const f = fans[Math.floor(Math.random() * fans.length)];
     const events = ['@' + (f ? f.username : 'fan') + ' vừa nhắn tin — AI đang phân tích', 'Phân tích sticker mới: cảm xúc tích cực 🧸', '@' + (f ? f.username : 'fan') + ' đang gõ…'];
     rt(events[Math.floor(Math.random() * events.length)]);
@@ -1277,11 +1275,7 @@ function genSuggestions(fan, msg){
 function getPending(){
   let p = store.get('cp_pending', null);
   if (!p){
-    p = [
-      { id:'p1', username:'minhanhh.20', msg:'Chị gửi sticker gấu nè, dễ thương hong', sel:0, status:'pending', editing:false },
-      { id:'p2', username:'khanh.ly.99', msg:'Tối nay em rủ bạn vào xem chung', sel:0, status:'pending', editing:false }
-    ];
-    p.forEach(it => { const f = getFans().find(x => x.username === it.username); it.suggestions = genSuggestions(f || { username:it.username, name:it.username, call:'em' }, it.msg); });
+    p = [];
     store.set('cp_pending', p);
   }
   return p;
@@ -1725,6 +1719,65 @@ setInterval(() => {
     setTimeout(() => { I('success','SUP_001','Đã đánh thức Panda — Đồng bộ ' + missed + ' tin nhắn mới từ lúc đóng tab','Đánh thức'); rt('Đã đánh thức Panda — Đồng bộ ' + missed + ' tin nhắn mới'); for (let k = 0; k < Math.min(2, missed); k++) simulateIncoming(true); }, 600);
   }
   renderLearnList(); renderPacks(); renderDocs(); renderProviders(); renderPending();
+})();
+</script>
+<script>
+/* ================= v3.1: CONG DANG NHAP + AI GATE (theo yeu cau CYAN 24/10) ================= */
+/* 1) Don dep data mau cho ban cai dat cu — chi khi chua tung dang nhap TikTok */
+(function v31Purge(){
+  if (store.get('cp_v31_clean', null)) return;
+  store.set('cp_v31_clean', 1);
+  if (store.get('panda_real_token_v262', null)) return;
+  const db = store.get('panda_ai_db_v261', null);
+  if (db){ db.fans = []; db.stories = []; db.situations = []; store.set('panda_ai_db_v261', db); }
+  store.set('cp_pending', []); store.set('cp_queue', []); store.set('cp_send_status', []); store.set('cp_selected', []);
+})();
+/* 2) Trang thai dang nhap + cau hinh Client Key */
+function isLogged(){ const t = store.get('panda_real_token_v262', null); return !!(t && (t.expires_at || 0) > Date.now()); }
+function clientCfgReady(){ const c = store.get('cp_client_cfg', null); return !!(c && (c.client_key || '').trim().length >= 15 && (c.redirect_uri || '').trim()); }
+function aiReady(silent){
+  if (!isLogged()){ if (!silent) I('error','ERR_001','🔒 AI đang khóa — cần đăng nhập TikTok trước (tab Kết Nối → quét QR)','AI Gate'); return false; }
+  if (!clientCfgReady()){ if (!silent) I('error','ERR_001','🔒 AI đang khóa — chưa lưu cấu hình Client Key đầy đủ: tab Kết Nối → Client Config → nhập đủ Client Key + Redirect URI → bấm Save','AI Gate'); return false; }
+  return true;
+}
+function needLogin(){ if (isLogged()) return true; I('error','ERR_001','🔒 Cần đăng nhập TikTok mới dùng được tính năng này — dữ liệu chỉ hiển thị sau khi đăng nhập','Đăng nhập'); goTab('connect'); return false; }
+/* 3) Ap khoa / mo khoa giao dien */
+function applyGate(){
+  const logged = isLogged();
+  const acc = store.get('panda_real_account_v262', null);
+  document.querySelectorAll('.tabbtn').forEach(b => { const ok = b.dataset.tab === 'connect'; b.style.opacity = (!logged && !ok) ? '.45' : ''; b.title = (!logged && !ok) ? '🔒 Đăng nhập TikTok để mở khóa mục này' : ''; });
+  const chip = $('gateChip');
+  if (chip){ chip.style.display = 'inline-block'; chip.textContent = logged ? '🔓 Đã đăng nhập @' + (acc ? acc.username : 'cyan.panda') : '🔒 Chưa đăng nhập — tool đang khóa'; }
+  const lo = $('btnLogout'); if (lo) lo.style.display = logged ? 'inline-block' : 'none';
+  const lb = $('lockBanner'); if (lb) lb.style.display = logged ? 'none' : 'flex';
+  if (!logged){ const act = document.querySelector('.tabpage.active'); if (act && act.id !== 'tab-connect') goTab('connect'); }
+  else if (!document.querySelector('.tabpage.active')) goTab('fans');
+}
+function gateLogout(){ disconnectTikTok(); applyGate(); goTab('connect'); }
+/* 4) Boc cac ham bang cong dang nhap / cong AI */
+(function v31Wrap(){
+  const _goTab = goTab;
+  goTab = function(name){ if (!isLogged() && name !== 'connect'){ I('error','ERR_001','🔒 Mục này chỉ mở sau khi đăng nhập TikTok','Đăng nhập'); name = 'connect'; } _goTab(name); };
+  const _qr = qrSuccess; qrSuccess = function(){ _qr(); applyGate(); I('success','SYS_001','🔓 Đã mở khóa toàn bộ dữ liệu & tính năng','Đăng nhập'); };
+  const _dc = disconnectTikTok; disconnectTikTok = function(){ _dc(); applyGate(); };
+  const guard = (fn, gate) => function(){ if (gate === 'ai' ? aiReady() : needLogin()) return fn.apply(this, arguments); };
+  if (typeof enqueueBulk === 'function') enqueueBulk = guard(enqueueBulk, 'login');
+  if (typeof scanNewFans === 'function') scanNewFans = guard(scanNewFans, 'login');
+  if (typeof simulateIncoming === 'function') simulateIncoming = guard(simulateIncoming, 'login');
+  if (typeof addNewFan === 'function') addNewFan = guard(addNewFan, 'login');
+  if (typeof pollScan === 'function') pollScan = guard(pollScan, 'login');
+  if (typeof openLiveModal === 'function') openLiveModal = guard(openLiveModal, 'login');
+  if (typeof trainAI === 'function') trainAI = guard(trainAI, 'ai');
+  if (typeof learnSelected === 'function') learnSelected = guard(learnSelected, 'ai');
+  if (typeof relearnAI === 'function') relearnAI = guard(relearnAI, 'ai');
+  if (typeof addDoc === 'function') addDoc = guard(addDoc, 'ai');
+  if (typeof approvePending === 'function') approvePending = guard(approvePending, 'ai');
+})();
+/* 5) Khoi dong v3.1: render lai sau purge + ap cong */
+(function v31Init(){
+  try{ renderFans(); renderWho(); renderPending(); renderStories(); renderMemory(); }catch(e){}
+  applyGate();
+  I('success','SYS_001','Cyan Panda v3.1 — cổng đăng nhập ' + (isLogged() ? 'đang MỞ (đã đăng nhập TikTok)' : 'đang KHÓA (chưa đăng nhập TikTok — dữ liệu & tính năng bị ẩn)'),'Khởi động v3.1');
 })();
 </script>
 </body>
