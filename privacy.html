@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Privacy Policy</title></head>
-<body style="max-width:800px;margin:40px auto;padding:20px;font-family:sans-serif;line-height:1.6">
-<h1>Privacy Policy - Cyan PandaTool</h1>
-<p>Last updated: Oct 23, 2026</p>
-<p>We use TikTok Login Kit scopes: user.info.basic, user.info.username. We collect only @username, display name via official API to organize fans. No password stored. Token stored locally.</p>
-<p>We do NOT sell data. We do NOT spam. Only reply to existing conversations started by fans.</p>
-<p>Contact: cyanpanda@example.com</p>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Cyan Panda Tool</title>
+<style>
+  body{font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F9FDF9;color:#1B2A1C;margin:0;padding:32px 16px;line-height:1.75}
+  .wrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid #C8E6C9;border-radius:24px;padding:32px 36px}
+  h1{color:#1B5E20;font-size:26px;margin:0 0 4px}
+  h2{color:#1B5E20;font-size:18px;margin:26px 0 6px}
+  .muted{color:#5f7160;font-size:13.5px}
+  a{color:#2E7D32}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="font-size:40px">🐼</div>
+  <h1>Privacy Policy — Cyan Panda Tool</h1>
+  <p class="muted">Effective date: 24 October 2026 · Official site: <a href="https://nameerrorcantnotfind.github.io/cyan-pandatool/">nameerrorcantnotfind.github.io/cyan-pandatool</a></p>
+
+  <h2>1. What Cyan Panda Tool is</h2>
+  <p>Cyan Panda Tool is a personal fan-management assistant for a single TikTok creator. It helps the creator organize fan information, review AI-suggested replies before sending, and learn the creator's conversation style from chat history.</p>
+
+  <h2>2. Data we access</h2>
+  <p>When the creator signs in with TikTok (Login Kit), the tool requests only the scopes shown on the TikTok authorization screen: <b>user.info.basic</b> (display name, avatar, open ID), <b>user.info.stats</b> (follower statistics) and <b>video.list</b>. The tool does not request access to private messages beyond what the creator manually provides inside the tool.</p>
+
+  <h2>3. Where data is stored</h2>
+  <p>Fan lists, notes and settings created in the tool are stored in the creator's own browser storage (localStorage) and, if the creator configures it, in the creator's own Supabase project. Data is not stored on any Cyan Panda Tool server — the tool is a static web application.</p>
+
+  <h2>4. How data is used</h2>
+  <p>Data is used solely to operate the tool for the signed-in creator: displaying fan lists, personalizing reply suggestions, and computing conversation statistics. We do not sell, rent, or share personal data with third parties for advertising.</p>
+
+  <h2>5. Tokens and credentials</h2>
+  <p>OAuth access tokens are stored only in the creator's browser and expire according to TikTok's policy. The TikTok Client Secret is never embedded in the public web application; when a backend is used, token exchange happens through a server-side function controlled by the creator.</p>
+
+  <h2>6. Data deletion</h2>
+  <p>The creator can delete all locally stored data at any time by clearing the browser's site data for this domain, disconnecting the TikTok account inside the tool (which removes the stored token), or deleting rows in their own Supabase project.</p>
+
+  <h2>7. Contact</h2>
+  <p>For privacy questions, contact the developer through the official website above.</p>
+
+  <p class="muted" style="margin-top:28px">© 2026 Cyan Panda Tool</p>
+</div>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Cyan Panda Tool — Đang quay lại tool…</title>
+<style>body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F9FDF9;color:#1B5E20;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}</style>
+</head>
+<body>
+<div>
+  <div style="font-size:52px">🐼</div>
+  <p><b>Đăng nhập TikTok xong!</b><br>Đang chuyển Authorization Code về Cyan Panda Tool…</p>
+</div>
+<script>
+  // GitHub Pages không có router: trang này hứng ?code=... từ TikTok rồi chuyển về index.html
+  var q = window.location.search || '';
+  window.location.replace('./index.html' + q);
+</script>
+</body>
+</html>
